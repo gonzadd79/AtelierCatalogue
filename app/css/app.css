@@ -9,6 +9,9 @@
   --accent-strong: #175540;
   --border: #d5d9d2;
   --danger: #9b2c2c;
+  --disabled-background: #dce3de;
+  --disabled-border: #aeb9b1;
+  --disabled-text: #48544c;
   --shadow: 0 16px 40px rgb(25 35 28 / 9%);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -109,6 +112,7 @@ h1 {
   margin: .35rem 0 .85rem;
   font-size: clamp(2.25rem, 9vw, 4.5rem);
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 h2 {
@@ -196,8 +200,10 @@ button {
 }
 
 button:disabled {
+  border-color: var(--disabled-border);
+  background: var(--disabled-background);
+  color: var(--disabled-text);
   cursor: not-allowed;
-  opacity: .65;
 }
 
 .help-text { font-size: .9rem; }
@@ -224,6 +230,8 @@ button:disabled {
 }
 
 .catalog-card {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -256,7 +264,7 @@ button:disabled {
   width: 100%;
   height: 100%;
   background:
-    linear-gradient(135deg, transparent 46%, color-mix(in srgb, var(--accent) 12%, transparent) 46% 54%, transparent 54%),
+    linear-gradient(135deg, transparent 47%, color-mix(in srgb, var(--accent) 10%, transparent) 47% 53%, transparent 53%),
     var(--surface-soft);
   color: var(--muted);
   place-content: center;
@@ -264,10 +272,17 @@ button:disabled {
 }
 
 .placeholder-mark {
+  display: grid;
+  width: clamp(3.5rem, 11vw, 4.75rem);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
   color: var(--accent);
-  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-size: clamp(1.65rem, 5vw, 2.5rem);
   font-weight: 800;
   line-height: 1;
+  place-items: center;
 }
 
 .placeholder-label {
@@ -275,7 +290,12 @@ button:disabled {
   font-size: .8rem;
 }
 
-.card-content { padding: 1rem; }
+.card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1rem;
+}
 
 .card-category {
   margin: 0 0 .35rem;
@@ -295,7 +315,8 @@ button:disabled {
 .card-metadata {
   display: grid;
   gap: .55rem;
-  margin: 1rem 0 0;
+  margin: auto 0 0;
+  padding-top: 1rem;
 }
 
 .card-metadata-row {
@@ -328,6 +349,17 @@ button:disabled {
 [hidden] { display: none !important; }
 
 @media (max-width: 40rem) {
+  .shell {
+    width: calc(100% - 1rem);
+    margin: .5rem auto 1rem;
+  }
+  .hero,
+  .dashboard,
+  .demo-banner,
+  .catalog-view,
+  .empty,
+  .error { padding: 1.1rem; }
+  h1 { font-size: clamp(2rem, 10vw, 3rem); }
   .demo-banner { display: block; }
   .demo-banner a { display: inline-block; margin-top: .75rem; }
   .section-heading { display: block; }
@@ -350,9 +382,11 @@ button:disabled {
     --accent-strong: #76d0aa;
     --border: #3c473e;
     --danger: #ff8c8c;
+    --disabled-background: #354139;
+    --disabled-border: #647067;
+    --disabled-text: #dce3de;
     --shadow: none;
   }
 
-  button { color: #11251c; }
   .demo-banner { border-color: #9d741f; background: #3b311b; color: #fff0c2; }
 }

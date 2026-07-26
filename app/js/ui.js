@@ -2,14 +2,12 @@
   "use strict";
 
   function renderDashboard(summary, mode) {
+    var message;
     document.getElementById("item-count").textContent = String(summary.itemCount);
     document.getElementById("project-count").textContent = String(summary.projectCount);
     document.getElementById("category-count").textContent = String(summary.categoryCount);
-    document.getElementById("app-message").textContent = mode === "demo"
-      ? "Jeu de démonstration chargé."
-      : summary.itemCount === 0
-      ? "Catalogue local chargé."
-      : "Les données locales sont chargées ; les vues catalogue seront développées dans une prochaine Story.";
+    message = mode === "demo" ? "Jeu de démonstration chargé." : "Catalogue local chargé.";
+    document.getElementById("app-message").textContent = message;
     document.getElementById("empty-state").hidden = summary.itemCount !== 0;
   }
 
@@ -36,7 +34,6 @@
     placeholder.className = "card-placeholder";
     placeholder.setAttribute("role", "img");
     placeholder.setAttribute("aria-label", "Aucune image disponible pour " + item.name);
-    placeholder.setAttribute("aria-hidden", "false");
     appendTextElement(placeholder, "span", "placeholder-mark", item.categoryName.slice(0, 1).toUpperCase());
     appendTextElement(placeholder, "span", "placeholder-label", "Aucune image");
     return placeholder;
