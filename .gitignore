@@ -1,0 +1,43 @@
+# OS et éditeurs
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Journaux, caches et temporaires
+*.log
+*.tmp
+*.temp
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+
+# Python
+.venv/
+venv/
+env/
+.coverage
+htmlcov/
+
+# Node et couvertures
+node_modules/
+.npm/
+coverage/
+
+# Builds futurs
+build/
+dist/
+out/
+*.egg-info/
+
+# Secrets locaux éventuels
+.env
+.env.*
+!.env.example

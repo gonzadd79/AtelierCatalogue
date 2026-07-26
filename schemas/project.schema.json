@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project.schema.json",
+  "title": "AtelierCatalog Project",
+  "description": "Projet technique relié aux objets utilisés sans devenir un gestionnaire de tâches.",
+  "type": "object",
+  "required": ["id", "name"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "slug": { "type": ["string", "null"] },
+    "description": { "type": ["string", "null"] },
+    "status": { "type": ["string", "null"] },
+    "itemUsages": { "type": "array", "items": { "type": "object", "required": ["itemId"], "additionalProperties": true, "properties": { "itemId": { "type": "string" }, "quantity": { "type": ["number", "null"], "minimum": 0 }, "role": { "type": ["string", "null"] }, "isMissing": { "type": "boolean" }, "alternativeItemIds": { "type": "array", "items": { "type": "string" } } } } },
+    "media": { "type": "array", "items": { "type": "object" } },
+    "documents": { "type": "array", "items": { "type": "object" } },
+    "notes": { "type": ["string", "null"] },
+    "createdAt": { "type": ["string", "null"], "format": "date-time" },
+    "updatedAt": { "type": ["string", "null"], "format": "date-time" }
+  }
+}

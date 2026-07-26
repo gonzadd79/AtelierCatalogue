@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>AtelierCatalog — Fondation</title>
+  <link rel="stylesheet" href="app/css/app.css">
+</head>
+<body data-catalog-mode="real">
+  <main class="shell" aria-labelledby="page-title">
+    <header class="hero">
+      <p class="eyebrow">Mémoire technique personnelle de l'atelier</p>
+      <h1 id="page-title">AtelierCatalog</h1>
+      <div class="metadata" aria-label="Informations sur l'application">
+        <span>Version 0.1.0</span>
+        <span>Statut Développement V1</span>
+      </div>
+    </header>
+    <section class="dashboard" aria-labelledby="dashboard-title">
+      <div class="section-heading">
+        <h2 id="dashboard-title">Tableau de bord</h2>
+        <p id="app-message" aria-live="polite" aria-atomic="true">Initialisation du catalogue local…</p>
+      </div>
+      <dl class="metrics" aria-label="Résumé du catalogue">
+        <div class="metric">
+          <dt>Articles</dt>
+          <dd id="item-count">—</dd>
+        </div>
+        <div class="metric">
+          <dt>Projets</dt>
+          <dd id="project-count">—</dd>
+        </div>
+        <div class="metric">
+          <dt>Catégories</dt>
+          <dd id="category-count">—</dd>
+        </div>
+      </dl>
+    </section>
+    <section id="empty-state" class="empty" aria-labelledby="empty-title" hidden>
+      <p class="empty-kicker">Tout est prêt</p>
+      <h2 id="empty-title">Votre atelier peut prendre vie ici</h2>
+      <p>Le catalogue fonctionne correctement. Il est simplement vide pour le moment : vous pouvez maintenant commencer à construire votre inventaire avec vos propres informations.</p>
+      <button type="button" disabled aria-describedby="inventory-action-help">Commencer l'inventaire</button>
+      <p id="inventory-action-help" class="help-text">Cette action est volontairement inactive : l'import sera développé dans une prochaine Feature.</p>
+    </section>
+    <section id="catalog-view" class="catalog-view" aria-labelledby="catalog-title" hidden>
+      <div class="catalog-heading">
+        <div>
+          <p class="section-kicker">Inventaire</p>
+          <h2 id="catalog-title">Catalogue</h2>
+        </div>
+        <p id="catalog-summary"></p>
+      </div>
+      <div id="catalog-grid" class="catalog-grid" role="list"></div>
+    </section>
+    <section id="error-state" class="error" role="alert" hidden>
+      <h2>Catalogue indisponible</h2>
+      <p id="error-message"></p>
+    </section>
+  </main>
+  <script src="data/catalogs-data.js"></script>
+  <script src="data/inventory-data.js"></script>
+  <script src="data/locations-data.js"></script>
+  <script src="data/projects-data.js"></script>
+  <script src="app/js/catalog.js"></script>
+  <script src="app/js/search.js"></script>
+  <script src="app/js/ui.js"></script>
+  <script src="app/js/app.js"></script>
+</body>
+</html>

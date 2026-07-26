@@ -1,0 +1,31 @@
+# Glossaire
+
+- **Objet inventorié** : terme canonique métier pour une entrée décrivant un objet ou groupe homogène ; représentation `InventoryItem`.
+- **Article** : libellé court d'interface pour un objet inventorié, sans sens commercial.
+- **Exemplaire** : unité physique individuelle d'un article.
+- **Lot** : ensemble compté ou documenté comme groupe ; il n'implique pas l'identité parfaite de ses membres.
+- **Modèle** : conception ou produit commun à plusieurs exemplaires.
+- **Variante** : version d'un modèle présentant une différence pertinente.
+- **Référence** : identifiant porté ou publié par un fabricant/vendeur, conservé sans invention.
+- **Quantité** : mesure connue ou inconnue du stock dans une unité déclarée.
+- **Disponibilité** : part mobilisable d'une quantité, distincte du total.
+- **Réservation** : affectation prévue qui réduit la disponibilité sans nécessairement constituer un usage.
+- **Emplacement** : nœud hiérarchique décrivant où se trouve physiquement un objet.
+- **Catégorie** : classement principal administré ; elle ne définit pas toute l'identité.
+- **Tag** : mot-clé souple, non hiérarchique.
+- **Spécification** : caractéristique structurée avec valeur, unité, conditions, statut et sources possibles.
+- **Observation** : information directement perceptible sur l'objet ou une photo, sans interprétation ajoutée.
+- **Annotation utilisateur** : texte ou déclaration fourni par l'utilisateur, conservé comme tel.
+- **Identification** : rapprochement raisonné entre l'objet observé et un modèle/référence.
+- **Confiance** : qualification prudente de la solidité d'une affirmation, non probabilité scientifique.
+- **Source** : origine traçable soutenant ou contextualisant une information.
+- **Média** : actif principalement visuel.
+- **Photo réelle** : photographie montrant l'exemplaire ou lot effectivement possédé.
+- **Photo externe** : image de référence ne prouvant pas l'apparence de l'exemplaire possédé.
+- **Annexe** : fichier associé conservé pour consultation ou réutilisation.
+- **Document** : annexe documentaire telle qu'une datasheet, notice, facture ou note.
+- **Projet** : contexte technique reliant objets, usages, médias, documents et notes.
+- **Usage projet** : relation indiquant le rôle et la quantité d'un article dans un projet.
+- **Intake** : zone d'entrée non publiée pour originaux à traiter.
+- **Brouillon** : proposition modifiable non encore publiée comme donnée réelle.
+- **Publication** : passage validé d'un brouillon vers les données et actifs consultables du catalogue.
