@@ -72,11 +72,37 @@ Elle relie l'activité présente à une contribution utile et fournit un repère
 
 ### Goal
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Un goal est l'énoncé d'un résultat recherché, observable et intentionnel qu'un produit, un projet ou une organisation cherche à atteindre. Il traduit une direction en changement attendu sans prescrire la manière de le produire.
+
+## Purpose
+
+Il concentre les décisions et les efforts sur un résultat explicite, permet d'en apprécier la progression et indique ce que la réussite doit rendre observable.
+
+## Rules
+
+- Un goal doit exprimer un résultat attendu plutôt qu'une activité ou un livrable.
+- Il doit être observable au moyen d'éléments permettant d'apprécier sa progression ou son atteinte.
+- Il doit préciser la valeur ou le changement recherché.
+- Il doit être formulé de manière claire et non ambiguë.
+- Il doit rester compatible avec la vision et contribuer à la mission.
+- Il ne doit prescrire ni méthode, ni solution, ni séquence de travail.
+- Il ne doit pas définir les limites précises du produit, du projet ou de l'organisation.
+- Son horizon ou ses conditions d'atteinte doivent être indiqués lorsqu'ils sont nécessaires pour l'évaluer.
+
+## Examples
+
+- Réduire de moitié le délai moyen nécessaire pour traiter une demande complète.
+- Permettre à neuf personnes sur dix d'accomplir une démarche essentielle sans assistance.
+- Faire en sorte que chaque décision active dispose d'une justification accessible lors de la prochaine revue.
+
+## Related Concepts
+
+- Vision
+- Mission
 
 ### Non-goal
 
