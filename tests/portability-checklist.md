@@ -24,6 +24,13 @@ Noter navigateur, version, système, chemin source, chemin copié et date.
 - [ ] Vérifier l'affichage de `15` cartes dans la vue Catalogue de démonstration.
 - [ ] Vérifier sur chaque carte : placeholder, nom, catégorie, emplacement et quantité ; projet seulement lorsqu'il existe.
 - [ ] Vérifier que les cartes sont parcourables au clavier et que le focus est visible.
+- [ ] Ouvrir une fiche par clic sur une carte et vérifier que le catalogue reste en contexte.
+- [ ] Ouvrir une fiche avec Entrée, puis avec Espace.
+- [ ] Vérifier nom, catégorie, emplacement, quantité, projet éventuel, description et placeholder sans donnée supplémentaire.
+- [ ] Fermer la fiche avec le bouton « Fermer » et vérifier le retour du focus sur la carte.
+- [ ] Fermer la fiche avec Échap et vérifier le même retour du focus.
+- [ ] Vérifier que le focus ne quitte pas la fenêtre tant qu'elle est ouverte.
+- [ ] Vérifier la fiche en largeur desktop et mobile.
 - [ ] Vérifier plusieurs colonnes sur desktop, moins sur tablette et une colonne sous `40rem`.
 - [ ] Vérifier que `index.html` avec les données réelles vides ne montre aucune grille.
 - [ ] Vérifier que `demo.html` ne charge aucun fichier de `data/`.

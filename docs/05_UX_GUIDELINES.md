@@ -60,11 +60,17 @@ Une carte permet de décider en un regard si l'article est probablement exploita
 - quantité ou état inconnu ;
 - projet associé, lorsqu'il existe.
 
-FEATURE-003 limite volontairement la carte à ces informations de parcours. Référence et état d'identification restent destinés aux futures vues qui les justifieront. Une absence de photo, quantité ou emplacement reste explicite. La carte est une unité de consultation focusable, sans action implicite, lien caché ni comportement simulant une fiche détaillée.
+FEATURE-003 limite volontairement la carte à ces informations de parcours. Référence et état d'identification restent destinés aux futures vues qui les justifieront. Une absence de photo, quantité ou emplacement reste explicite.
+
+Depuis FEATURE-004, toute la carte constitue une action explicite ouvrant une fiche en lecture seule. Elle expose sa nature de bouton et l'ouverture d'une fenêtre de dialogue aux technologies d'assistance. Clic, Entrée et Espace produisent le même résultat ; aucun autre geste ou action secondaire n'est caché dans la carte.
 
 ## Fiche d'un objet
 
-La fiche est organisée en sections indépendantes :
+La première fiche de FEATURE-004 reste volontairement courte. Elle s'ouvre dans une fenêtre modale afin de conserver le catalogue visible en contexte et présente uniquement le nom, la catégorie, l'emplacement, la quantité, le premier projet associé, la description disponible et l'image ou son placeholder. Elle n'offre aucune édition ni navigation vers une vue supplémentaire.
+
+La fermeture est disponible par un bouton nommé et par Échap. Pendant l'ouverture, le focus reste dans la fenêtre ; après fermeture, il revient à la carte ayant déclenché l'action. Le titre de la fiche nomme la fenêtre pour les technologies d'assistance.
+
+À terme, une fiche complète pourra être organisée en sections indépendantes :
 
 1. Identité
 2. Galerie

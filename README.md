@@ -2,7 +2,7 @@
 
 AtelierCatalog est un catalogue personnel, local et portable pour inventorier, documenter et relier les objets techniques d'un atelier. Sa vision est d'être **la mémoire technique personnelle de l'atelier**, et non une simple liste de stock.
 
-> **Statut : développement V1.** Le tableau de bord, la séparation réel/démonstration et la première vue Catalogue sous forme de cartes sont disponibles. La recherche, les filtres et les fiches détaillées ne sont pas encore développés.
+> **Statut : développement V1.** Le tableau de bord, la séparation réel/démonstration, la vue Catalogue et une première fiche composant en lecture seule sont disponibles. La recherche, les filtres et les fiches détaillées complètes ne sont pas encore développés.
 
 ## Contraintes fondamentales
 

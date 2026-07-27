@@ -1,6 +1,9 @@
 (function (global) {
   "use strict";
 
+  var lastDialogTrigger = null;
+  var dialogHandlersReady = false;
+
   function renderDashboard(summary, mode) {
     var message;
     document.getElementById("item-count").textContent = String(summary.itemCount);
@@ -21,9 +24,9 @@
     return element;
   }
 
-  function appendMetadata(list, term, value) {
+  function appendMetadata(list, term, value, rowClassName) {
     var group = document.createElement("div");
-    group.className = "card-metadata-row";
+    group.className = rowClassName || "card-metadata-row";
     appendTextElement(group, "dt", null, term);
     appendTextElement(group, "dd", null, value);
     list.appendChild(group);
@@ -39,9 +42,9 @@
     return placeholder;
   }
 
-  function createMedia(item) {
+  function createMedia(item, className) {
     var media = document.createElement("div");
-    media.className = "card-media";
+    media.className = className || "card-media";
     if (!item.imagePath) {
       media.appendChild(createPlaceholder(item));
       return media;
@@ -58,14 +61,70 @@
     return media;
   }
 
+  function closeItemDialog() {
+    var dialog = document.getElementById("item-dialog");
+    if (dialog.open) {
+      dialog.close();
+    }
+  }
+
+  function ensureDialogHandlers() {
+    var dialog;
+    if (dialogHandlersReady) {
+      return;
+    }
+    dialog = document.getElementById("item-dialog");
+    document.getElementById("item-dialog-close").addEventListener("click", closeItemDialog);
+    dialog.addEventListener("cancel", function (event) {
+      event.preventDefault();
+      closeItemDialog();
+    });
+    dialog.addEventListener("close", function () {
+      document.body.classList.remove("dialog-open");
+      if (lastDialogTrigger && document.contains(lastDialogTrigger)) {
+        lastDialogTrigger.focus();
+      }
+      lastDialogTrigger = null;
+    });
+    dialogHandlersReady = true;
+  }
+
+  function openItemDialog(item, trigger) {
+    var dialog = document.getElementById("item-dialog");
+    var metadata = document.getElementById("item-dialog-metadata");
+    var descriptionSection = document.getElementById("item-dialog-description-section");
+
+    document.getElementById("item-dialog-title").textContent = item.name;
+    document.getElementById("item-dialog-media").replaceChildren(createMedia(item, "detail-media"));
+    metadata.replaceChildren();
+    appendMetadata(metadata, "Catégorie", item.categoryName, "detail-metadata-row");
+    appendMetadata(metadata, "Emplacement", item.locationName, "detail-metadata-row");
+    appendMetadata(metadata, "Quantité", item.quantityLabel, "detail-metadata-row");
+    if (item.projectName) {
+      appendMetadata(metadata, "Projet", item.projectName, "detail-metadata-row");
+    }
+
+    descriptionSection.hidden = !item.description;
+    document.getElementById("item-dialog-description").textContent = item.description || "";
+    lastDialogTrigger = trigger;
+    document.body.classList.add("dialog-open");
+    dialog.showModal();
+    document.getElementById("item-dialog-close").focus();
+  }
+
   function createCatalogCard(item) {
     var card = document.createElement("article");
+    var action = document.createElement("div");
     var titleId = "catalog-item-" + item.id;
     card.className = "catalog-card";
     card.setAttribute("role", "listitem");
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("aria-labelledby", titleId);
-    card.appendChild(createMedia(item));
+    action.className = "catalog-card-action";
+    action.setAttribute("role", "button");
+    action.setAttribute("tabindex", "0");
+    action.setAttribute("aria-haspopup", "dialog");
+    action.setAttribute("aria-controls", "item-dialog");
+    action.setAttribute("aria-labelledby", titleId);
+    action.appendChild(createMedia(item));
 
     var content = document.createElement("div");
     content.className = "card-content";
@@ -81,13 +140,24 @@
       appendMetadata(metadata, "Projet", item.projectName);
     }
     content.appendChild(metadata);
-    card.appendChild(content);
+    action.appendChild(content);
+    action.addEventListener("click", function () {
+      openItemDialog(item, action);
+    });
+    action.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openItemDialog(item, action);
+      }
+    });
+    card.appendChild(action);
     return card;
   }
 
   function renderCatalog(items) {
     var view = document.getElementById("catalog-view");
     var grid = document.getElementById("catalog-grid");
+    ensureDialogHandlers();
     grid.replaceChildren();
     items.forEach(function (item) {
       grid.appendChild(createCatalogCard(item));

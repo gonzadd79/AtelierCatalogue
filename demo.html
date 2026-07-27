@@ -64,6 +64,26 @@
       <p id="error-message"></p>
     </section>
   </main>
+  <dialog id="item-dialog" class="item-dialog" aria-labelledby="item-dialog-title" aria-describedby="item-dialog-context">
+    <div class="dialog-header">
+      <div>
+        <p class="section-kicker">Fiche composant</p>
+        <h2 id="item-dialog-title"></h2>
+        <p id="item-dialog-context" class="dialog-context">Consultation en lecture seule</p>
+      </div>
+      <button id="item-dialog-close" class="dialog-close" type="button">Fermer</button>
+    </div>
+    <div class="dialog-body">
+      <div id="item-dialog-media"></div>
+      <div class="dialog-information">
+        <dl id="item-dialog-metadata" class="detail-metadata"></dl>
+        <section id="item-dialog-description-section" class="detail-description" aria-labelledby="item-dialog-description-title" hidden>
+          <h3 id="item-dialog-description-title">Description</h3>
+          <p id="item-dialog-description"></p>
+        </section>
+      </div>
+    </div>
+  </dialog>
   <script src="samples/sample-catalogs-data.js"></script>
   <script src="samples/sample-inventory-data.js"></script>
   <script src="samples/sample-locations-data.js"></script>

@@ -82,7 +82,10 @@
         locationName: firstRelatedName(item.locationIds, locations, "Emplacement inconnu"),
         quantityLabel: formatQuantity(item.quantity, item.stockUnit),
         projectName: firstRelatedName(item.projectIds, projects, null),
-        imagePath: getLocalImagePath(item.media)
+        imagePath: getLocalImagePath(item.media),
+        description: typeof item.description === "string" && item.description.trim()
+          ? item.description
+          : null
       };
     });
   }
