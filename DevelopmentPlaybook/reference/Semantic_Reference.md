@@ -229,11 +229,39 @@ Il rend une notion abstraite plus facile à comprendre, montre un résultat poss
 
 ### Prompt
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Un prompt est un ensemble d'instructions fourni à un système capable de les interpréter afin de guider l'exécution d'une tâche ou l'adoption d'un comportement. Il exprime une intention, les contraintes applicables et, lorsque nécessaire, le résultat attendu.
+
+## Purpose
+
+Il transforme une intention en indications exploitables, réduit les ambiguïtés et oriente l'exécution vers un résultat conforme au besoin exprimé.
+
+## Rules
+
+- Un prompt doit énoncer clairement la tâche ou le comportement attendu.
+- Il doit fournir le contexte nécessaire sans introduire d'informations sans rapport avec l'objectif.
+- Les contraintes, priorités et limites applicables doivent être explicites.
+- Les instructions doivent être cohérentes et ordonnées lorsque leur séquence est importante.
+- Le résultat attendu doit être décrit avec un niveau de précision proportionné au besoin.
+- Les informations absentes ou incertaines ne doivent pas être présentées comme acquises.
+- Un prompt peut être réutilisable, mais sa nature ne dépend pas de cette réutilisabilité.
+- Lorsqu'il utilise un template, il guide son emploi sans se confondre avec la structure fournie par celui-ci.
+
+## Examples
+
+- Une instruction demande de résumer un document pour un public donné dans une longueur déterminée.
+- Une instruction guide la comparaison de deux artefacts selon des points explicitement indiqués.
+- Une instruction demande de produire un document à partir d'informations fournies et d'un template, tout en signalant les éléments manquants.
+
+## Related Concepts
+
+- Artifact
+- Document
+- Template
+- Example
 
 ## Methodology
 
