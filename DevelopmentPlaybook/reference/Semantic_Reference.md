@@ -6,11 +6,35 @@ Ce document organise les concepts employés par DevelopmentPlaybook. Il constitu
 
 ### Vision
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Une vision est une description concise de l'état futur recherché pour un produit, un projet ou une organisation, ainsi que de la valeur durable que cet état doit rendre possible. Elle donne une direction commune sans préciser les moyens de l'atteindre.
+
+## Purpose
+
+Elle aligne durablement les décisions et les efforts autour d'une aspiration commune afin que les évolutions successives contribuent à la même direction.
+
+## Rules
+
+- Une vision doit décrire un état futur et la valeur qui lui est associée.
+- Elle doit exprimer une direction durable plutôt qu'une réponse à une circonstance temporaire.
+- Elle doit être concise et compréhensible sans explication détaillée.
+- Elle ne doit prescrire ni solution, ni méthode, ni moyen particulier.
+- Elle ne doit pas énumérer de résultats détaillés, d'étapes ou de livrables.
+- Elle ne doit définir ni l'activité quotidienne, ni les limites précises du travail.
+- Elle doit être suffisamment ambitieuse pour orienter les choix tout en restant crédible.
+
+## Examples
+
+- Rendre une éducation de qualité accessible à chacun, quels que soient son lieu et ses ressources.
+- Faire de chaque déplacement urbain une expérience sûre, simple et inclusive.
+- Permettre aux organisations de transformer durablement leur connaissance collective en décisions comprises et partagées.
+
+## Related Concepts
+
+- Reference
 
 ### Mission
 
