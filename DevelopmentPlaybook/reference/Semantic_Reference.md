@@ -141,11 +141,39 @@ Il clarifie les ambitions volontairement écartées, prévient les attentes erro
 
 ### Scope
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Un scope est l'énoncé des limites du périmètre couvert par un produit, un projet, une initiative ou une organisation. Il précise les sujets, les situations ou les populations inclus et exclus, sans décrire la manière dont le travail est réalisé.
+
+## Purpose
+
+Il établit une compréhension commune de ce qui relève ou non du périmètre et permet de déterminer si un élément donné doit être considéré dans ce cadre.
+
+## Rules
+
+- Un scope doit identifier clairement l'entité et le contexte auxquels il s'applique.
+- Il doit rendre explicites les inclusions et les exclusions nécessaires à la compréhension du périmètre.
+- Ses limites doivent reposer sur des critères suffisamment précis pour traiter les cas courants sans ambiguïté.
+- Il ne doit formuler ni état futur recherché, ni raison d'être, ni résultat attendu ou volontairement écarté.
+- Il ne doit décrire ni moyens, ni activités, ni priorités, ni contraintes techniques.
+- Un élément exclu du scope ne devient pas un non-goal du seul fait de cette exclusion.
+- Toute ambiguïté sur une limite doit être résolue en précisant le critère d'inclusion ou d'exclusion concerné.
+- Toute évolution du périmètre doit résulter d'un changement explicite du scope.
+
+## Examples
+
+- Le périmètre couvre les demandes provenant des équipes internes et exclut celles émises par des partenaires externes.
+- Le périmètre concerne les établissements situés dans une région définie et exclut ceux situés hors de cette région.
+- Le périmètre couvre les équipements détenus par une organisation et exclut les biens confiés temporairement par des tiers.
+
+## Related Concepts
+
+- Vision
+- Mission
+- Goal
+- Non-goal
 
 ## Documentation
 
