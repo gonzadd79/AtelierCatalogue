@@ -48,11 +48,42 @@ Description:
 
 ### Document
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Un document est un ensemble structuré d'informations conçu pour être consulté et compris comme une unité. Il communique, conserve ou encadre un sujet pour un public et un usage déterminés.
+
+## Purpose
+
+Il rend une information accessible, partageable et durable afin de soutenir la compréhension, l'action et la continuité d'un projet.
+
+## Rules
+
+- Un document possède un objectif, un périmètre et un public identifiables.
+- Sa structure doit faciliter la recherche et la compréhension de l'information.
+- Son statut et son niveau d'autorité doivent être explicites.
+- Toute information inconnue, incomplète ou incertaine doit être signalée comme telle.
+- Sa responsabilité et ses conditions de révision doivent pouvoir être déterminées.
+- Il doit rester cohérent avec les références qui font autorité et rendre visibles les divergences éventuelles.
+- Il est actualisé lorsque son sujet évolue ou clairement signalé lorsqu'il devient obsolète.
+
+## Examples
+
+- Une présentation générale expose le contexte, les objectifs et le périmètre d'une initiative.
+- Une procédure décrit une suite d'actions et les conditions de leur réalisation.
+- Une spécification énonce les exigences et les limites d'un produit.
+- Un rapport de revue consigne des observations et une conclusion.
+
+## Related Concepts
+
+- Artifact
+- Reference
+- Source of Truth
+- Template
+- Example
+- Consistency
+- Traceability
 
 ### Artifact
 
