@@ -38,11 +38,37 @@ Elle aligne durablement les décisions et les efforts autour d'une aspiration co
 
 ### Mission
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Une mission est l'énoncé concis de la raison d'être d'un produit, d'un projet ou d'une organisation. Elle précise la valeur apportée, les bénéficiaires de cette valeur et le rôle durable assumé pour la produire.
+
+## Purpose
+
+Elle relie l'activité présente à une contribution utile et fournit un repère stable pour orienter les décisions vers cette contribution.
+
+## Rules
+
+- Une mission doit exprimer une raison d'être et la valeur apportée.
+- Elle doit indiquer à qui ou à quoi cette valeur bénéficie.
+- Elle doit décrire un rôle durable exercé dans le présent, et non un état futur recherché.
+- Elle doit être concise, compréhensible et suffisamment stable pour guider les décisions dans le temps.
+- Elle ne doit prescrire ni solution, ni méthode, ni moyen particulier.
+- Elle ne doit pas énumérer de résultats détaillés, d'étapes ou de livrables.
+- Elle ne doit pas définir les limites précises du travail.
+- Elle doit être compatible avec la vision sans la répéter.
+
+## Examples
+
+- Aider les petites organisations à rendre leurs informations essentielles claires, accessibles et durables.
+- Faciliter l'accès autonome des personnes aux services dont elles ont besoin au quotidien.
+- Préserver et transmettre des connaissances fiables afin de soutenir des décisions comprises et partagées.
+
+## Related Concepts
+
+- Vision
+- Reference
 
 ### Goal
 
