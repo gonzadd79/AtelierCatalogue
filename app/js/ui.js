@@ -3,6 +3,9 @@
 
   var lastDialogTrigger = null;
   var dialogHandlersReady = false;
+  var searchHandlersReady = false;
+  var allCatalogItems = [];
+  var filterCatalogItems = null;
 
   function renderDashboard(summary, mode) {
     var message;
@@ -156,15 +159,48 @@
 
   function renderCatalog(items) {
     var view = document.getElementById("catalog-view");
-    var grid = document.getElementById("catalog-grid");
     ensureDialogHandlers();
+    renderCatalogCards(items);
+    document.getElementById("catalog-summary").textContent = formatItemCount(items.length);
+    view.hidden = items.length === 0;
+  }
+
+  function formatItemCount(count) {
+    return count + (count > 1 ? " articles" : " article");
+  }
+
+  function renderCatalogCards(items) {
+    var grid = document.getElementById("catalog-grid");
     grid.replaceChildren();
     items.forEach(function (item) {
       grid.appendChild(createCatalogCard(item));
     });
-    document.getElementById("catalog-summary").textContent = items.length
-      + (items.length > 1 ? " articles" : " article");
-    view.hidden = items.length === 0;
+  }
+
+  function updateSearchResults(query) {
+    var hasQuery = query.trim().length > 0;
+    var items = filterCatalogItems(allCatalogItems, query);
+    var noResults = hasQuery && items.length === 0;
+    renderCatalogCards(items);
+    document.getElementById("catalog-grid").hidden = noResults;
+    document.getElementById("catalog-no-results").hidden = !noResults;
+    document.getElementById("catalog-summary").textContent = hasQuery
+      ? formatItemCount(items.length) + " sur " + allCatalogItems.length
+      : formatItemCount(allCatalogItems.length);
+  }
+
+  function initializeSearch(items, filterItems) {
+    var input = document.getElementById("catalog-search-input");
+    allCatalogItems = items.slice();
+    filterCatalogItems = filterItems;
+    input.value = "";
+    if (!searchHandlersReady) {
+      input.addEventListener("input", function () {
+        updateSearchResults(input.value);
+      });
+      searchHandlersReady = true;
+    }
+    updateSearchResults("");
   }
 
   function renderError(error) {
@@ -180,6 +216,7 @@
   global.AtelierCatalog.ui = {
     renderDashboard: renderDashboard,
     renderCatalog: renderCatalog,
+    initializeSearch: initializeSearch,
     renderError: renderError
   };
 }(window));

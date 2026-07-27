@@ -223,6 +223,54 @@ button:disabled {
   color: var(--muted);
 }
 
+.catalog-search {
+  display: grid;
+  gap: .4rem;
+  margin-bottom: 1.25rem;
+}
+
+.catalog-search label {
+  font-weight: 700;
+}
+
+.catalog-search input {
+  width: 100%;
+  padding: .8rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: .65rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.catalog-search input:focus-visible {
+  border-color: var(--accent);
+  outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 2px;
+}
+
+#catalog-search-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.search-empty {
+  padding: 1.5rem;
+  border: 1px dashed var(--border);
+  border-radius: .75rem;
+  background: var(--surface-soft);
+  text-align: center;
+}
+
+.search-empty h3,
+.search-empty p { margin: 0; }
+
+.search-empty p {
+  margin-top: .35rem;
+  color: var(--muted);
+}
+
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));

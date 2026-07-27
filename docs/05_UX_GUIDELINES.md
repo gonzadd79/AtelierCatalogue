@@ -45,9 +45,9 @@ Chaque indicateur doit mener à une action utile ou à la collection corresponda
 
 ## Recherche principale
 
-La recherche est l'élément principal de l'application et reste visible dans les vues de consultation. Elle accepte naturellement des termes tels que `XL4015`, `ESP32`, `Raspberry`, `12V`, `5A`, `BMS`, `relais` ou `MOSFET`.
+Depuis FEATURE-005, la recherche est visible au-dessus d'un catalogue contenant des articles. Elle filtre instantanément les cartes selon le nom, la catégorie ou l'emplacement et accepte naturellement des termes tels que `ESP32`, `Raspberry` ou `relais`. Le catalogue réellement vide conserve son accueil dédié sans afficher un champ inutile.
 
-La V1 reste textuelle et explicable. Elle ne prétend pas comprendre sémantiquement une demande. La recherche conserve la saisie lors du passage entre cartes, tableau et fiche, annonce le nombre de résultats et permet une réinitialisation immédiate.
+La V1 reste textuelle et explicable. Elle ne prétend pas comprendre sémantiquement une demande. La saisie annonce le nombre de cartes correspondantes, laisse les compteurs généraux inchangés et permet une réinitialisation immédiate par effacement. La conservation de la recherche entre plusieurs vues reste une évolution future.
 
 ## Cartes d'objets
 

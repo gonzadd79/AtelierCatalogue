@@ -14,6 +14,7 @@
       var items = global.AtelierCatalog.catalog.getCatalogItems(data);
       global.AtelierCatalog.ui.renderDashboard(summary, mode);
       global.AtelierCatalog.ui.renderCatalog(items);
+      global.AtelierCatalog.ui.initializeSearch(items, global.AtelierCatalog.search.filterItems);
     } catch (error) {
       global.AtelierCatalog.ui.renderError(error);
     }

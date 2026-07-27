@@ -2,7 +2,7 @@
 
 AtelierCatalog est un catalogue personnel, local et portable pour inventorier, documenter et relier les objets techniques d'un atelier. Sa vision est d'être **la mémoire technique personnelle de l'atelier**, et non une simple liste de stock.
 
-> **Statut : développement V1.** Le tableau de bord, la séparation réel/démonstration, la vue Catalogue et une première fiche composant en lecture seule sont disponibles. La recherche, les filtres et les fiches détaillées complètes ne sont pas encore développés.
+> **Statut : développement V1.** Le tableau de bord, la séparation réel/démonstration, la vue Catalogue, une première fiche composant en lecture seule et la recherche instantanée sur le nom, la catégorie et l'emplacement sont disponibles. Les filtres et les fiches détaillées complètes ne sont pas encore développés.
 
 ## Contraintes fondamentales
 
@@ -24,7 +24,7 @@ AtelierCatalog est un catalogue personnel, local et portable pour inventorier, d
 
 ## Ouverture
 
-Double-cliquer sur `index.html`. Le catalogue affiche les articles réels sous forme de cartes ou, lorsqu'il est vide, l'état d'accueil initial. Aucune connexion Internet n'est nécessaire. Les exemples ne sont jamais chargés par défaut.
+Double-cliquer sur `index.html`. Le catalogue affiche les articles réels sous forme de cartes ou, lorsqu'il est vide, l'état d'accueil initial. Lorsqu'il contient des articles, la recherche locale filtre instantanément les cartes par nom, catégorie ou emplacement. Aucune connexion Internet n'est nécessaire. Les exemples ne sont jamais chargés par défaut.
 
 Pour le développement et les démonstrations, ouvrir explicitement `demo.html`. Sa bannière indique que les données sont fictives et permet de revenir à `index.html`. Les 15 articles fictifs y sont visibles sous forme de cartes. Les deux pages restent compatibles avec `file://` et ne chargent jamais leurs sources de données simultanément.
 

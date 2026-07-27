@@ -52,6 +52,15 @@
         </div>
         <p id="catalog-summary"></p>
       </div>
+      <div class="catalog-search">
+        <label for="catalog-search-input">Rechercher un composant</label>
+        <input id="catalog-search-input" type="search" placeholder="Rechercher un composant…" autocomplete="off" aria-describedby="catalog-search-help" aria-controls="catalog-grid catalog-no-results">
+        <p id="catalog-search-help">Recherche dans le nom, la catégorie et l'emplacement.</p>
+      </div>
+      <div id="catalog-no-results" class="search-empty" role="status" aria-live="polite" aria-atomic="true" hidden>
+        <h3>Aucun composant ne correspond à votre recherche.</h3>
+        <p>Modifiez ou effacez votre saisie pour afficher de nouveau le catalogue.</p>
+      </div>
       <div id="catalog-grid" class="catalog-grid" role="list"></div>
     </section>
     <section id="error-state" class="error" role="alert" hidden>

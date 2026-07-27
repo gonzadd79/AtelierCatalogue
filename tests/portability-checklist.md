@@ -31,9 +31,16 @@ Noter navigateur, version, système, chemin source, chemin copié et date.
 - [ ] Fermer la fiche avec Échap et vérifier le même retour du focus.
 - [ ] Vérifier que le focus ne quitte pas la fenêtre tant qu'elle est ouverte.
 - [ ] Vérifier la fiche en largeur desktop et mobile.
+- [ ] Dans `demo.html`, saisir un nom, une catégorie puis un emplacement et vérifier le filtrage immédiat des cartes.
+- [ ] Vérifier que la recherche ignore la casse et les accents.
+- [ ] Saisir un terme présent uniquement dans une description, puis uniquement dans un projet, et vérifier qu'aucune carte ne correspond.
+- [ ] Saisir un terme absent et vérifier le message « Aucun composant ne correspond à votre recherche. ».
+- [ ] Effacer entièrement le champ et vérifier le retour des `15` cartes.
+- [ ] Pendant chaque recherche, vérifier que les compteurs restent à `15` articles, `3` projets et `8` catégories.
+- [ ] Parcourir le champ et les cartes filtrées au clavier, puis ouvrir et fermer une fiche.
 - [ ] Vérifier plusieurs colonnes sur desktop, moins sur tablette et une colonne sous `40rem`.
 - [ ] Vérifier que `index.html` avec les données réelles vides ne montre aucune grille.
 - [ ] Vérifier que `demo.html` ne charge aucun fichier de `data/`.
 - [ ] Utiliser « Revenir au catalogue réel » et retrouver les compteurs `0`, `0`, `0`.
 
-Résultat attendu à la fondation : pages statiques lisibles, collection réelle vide, démonstration explicitement signalée et zéro ressource distante. Les vues, recherche, images et documents seront vérifiés lorsqu'ils existeront.
+Résultat attendu : pages statiques lisibles, collection réelle vide, démonstration explicitement signalée, recherche locale opérationnelle et zéro ressource distante. Les images réelles et documents seront vérifiés lorsqu'ils existeront.
