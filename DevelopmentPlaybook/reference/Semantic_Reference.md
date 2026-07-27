@@ -28,13 +28,15 @@ Elle aligne durablement les décisions et les efforts autour d'une aspiration co
 
 ## Examples
 
-- Rendre une éducation de qualité accessible à chacun, quels que soient son lieu et ses ressources.
-- Faire de chaque déplacement urbain une expérience sûre, simple et inclusive.
-- Permettre aux organisations de transformer durablement leur connaissance collective en décisions comprises et partagées.
+- Une éducation de qualité est accessible à chacun, quels que soient son lieu et ses ressources.
+- Chaque déplacement urbain est une expérience sûre, simple et inclusive.
+- Les organisations transforment durablement leur connaissance collective en décisions comprises et partagées.
 
 ## Related Concepts
 
-- Reference
+- Mission
+- Goal
+- Scope
 
 ### Mission
 
@@ -68,7 +70,8 @@ Elle relie l'activité présente à une contribution utile et fournit un repère
 ## Related Concepts
 
 - Vision
-- Reference
+- Goal
+- Scope
 
 ### Goal
 
@@ -103,6 +106,8 @@ Il concentre les décisions et les efforts sur un résultat explicite, permet d'
 
 - Vision
 - Mission
+- Non-goal
+- Scope
 
 ### Non-goal
 
@@ -138,6 +143,7 @@ Il clarifie les ambitions volontairement écartées, prévient les attentes erro
 - Goal
 - Vision
 - Mission
+- Scope
 
 ### Scope
 
