@@ -56,11 +56,41 @@ Description:
 
 ### Artifact
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Un artefact est un résultat identifiable produit, utilisé ou maintenu au cours d'un projet. Il matérialise une information, une décision, un livrable ou une preuve utile à la conduite et à la compréhension du projet.
+
+## Purpose
+
+Il rend un résultat observable, consultable, transmissible et vérifiable afin qu'il puisse soutenir le travail collectif et conserver sa valeur dans le temps.
+
+## Rules
+
+- Un artefact possède un objectif identifiable.
+- Son contenu et sa forme doivent être adaptés à l'usage auquel il est destiné.
+- Sa responsabilité et son état doivent pouvoir être déterminés.
+- Son origine et ses relations avec d'autres artefacts doivent rester traçables lorsque cela est nécessaire.
+- Il est maintenu tant qu'il demeure utile ou fait autorité, puis clairement signalé lorsqu'il devient obsolète.
+- Son caractère officiel, dérivé ou informatif doit être explicite.
+
+## Examples
+
+- Une feuille de route présente les grandes étapes d'évolution d'un produit.
+- Un relevé de décision consigne un choix, sa justification et ses conséquences.
+- Un rapport de revue conserve les constats et la conclusion d'une évaluation.
+- Un modèle réutilisable établit la structure attendue d'un livrable récurrent.
+
+## Related Concepts
+
+- Document
+- Reference
+- Template
+- Example
+- Source of Truth
+- Responsibility
+- Traceability
 
 ### Reference
 
