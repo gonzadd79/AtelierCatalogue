@@ -106,11 +106,38 @@ Il concentre les décisions et les efforts sur un résultat explicite, permet d'
 
 ### Non-goal
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Un non-goal est l'énoncé explicite d'un résultat qu'un produit, un projet ou une organisation choisit de ne pas rechercher. Il établit une limite d'intention afin qu'une attente étrangère à la direction retenue ne soit pas interprétée comme un engagement.
+
+## Purpose
+
+Il clarifie les ambitions volontairement écartées, prévient les attentes erronées et aide à préserver la cohérence des décisions.
+
+## Rules
+
+- Un non-goal doit exprimer un choix intentionnel.
+- Il doit décrire un résultat non recherché, et non une activité ou un élément simplement absent du travail.
+- Il ne doit représenter ni une incapacité, ni une contrainte, ni une limitation temporaire.
+- Un travail différé ne devient pas un non-goal du seul fait qu'il n'est pas réalisé immédiatement.
+- Il doit être formulé de manière explicite et non ambiguë ; il ne peut pas être déduit d'un simple silence.
+- Sa justification doit être indiquée lorsqu'elle est nécessaire pour éviter une interprétation erronée.
+- Il doit rester compatible avec la vision, la mission et les goals approuvés.
+- Il demeure valable jusqu'à ce qu'un changement d'intention explicite le remplace.
+
+## Examples
+
+- Ne pas chercher à imposer une manière unique de travailler.
+- Ne pas viser l'autonomie totale au détriment de la responsabilité des décisions.
+- Ne pas considérer le nombre de fonctionnalités comme une mesure suffisante de réussite.
+
+## Related Concepts
+
+- Goal
+- Vision
+- Mission
 
 ### Scope
 
