@@ -82,8 +82,6 @@ Il rend une information accessible, partageable et durable afin de soutenir la c
 - Source of Truth
 - Template
 - Example
-- Consistency
-- Traceability
 
 ### Artifact
 
@@ -111,7 +109,7 @@ Il rend un résultat observable, consultable, transmissible et vérifiable afin 
 - Une feuille de route présente les grandes étapes d'évolution d'un produit.
 - Un relevé de décision consigne un choix, sa justification et ses conséquences.
 - Un rapport de revue conserve les constats et la conclusion d'une évaluation.
-- Un modèle réutilisable établit la structure attendue d'un livrable récurrent.
+- Un template établit la structure attendue d'un livrable récurrent.
 
 ## Related Concepts
 
@@ -120,8 +118,6 @@ Il rend un résultat observable, consultable, transmissible et vérifiable afin 
 - Template
 - Example
 - Source of Truth
-- Responsibility
-- Traceability
 
 ### Reference
 
@@ -172,7 +168,7 @@ Il facilite la production répétée d'artefacts comparables, réduit les omissi
 ## Rules
 
 - Un template possède un objectif et un type d'artefact attendu clairement identifiables.
-- Il ne contient que la structure, les repères et les instructions utiles à son usage récurrent.
+- Il ne contient que la structure, les repères et les indications nécessaires à son remplissage.
 - Les éléments fixes doivent être distingués des éléments à compléter.
 - Il reste générique et ne préjuge pas du contenu propre à un usage particulier.
 - Son utilisation ne garantit ni la qualité, ni l'approbation, ni l'autorité de l'artefact produit.
@@ -321,7 +317,7 @@ Status: Approved
 
 ## Definition
 
-Une source de vérité est l'autorité de référence désignée pour un ensemble d'informations. En cas de divergence avec une autre représentation, son contenu prévaut dans les limites de son périmètre.
+Une source de vérité est l'autorité désignée pour un ensemble d'informations. En cas de divergence avec une autre représentation, son contenu prévaut dans les limites de son périmètre.
 
 ## Purpose
 
@@ -332,7 +328,7 @@ Elle permet de savoir quelle information fait foi, de prévenir les contradictio
 - Un ensemble d'informations possède une seule source de vérité désignée.
 - Son périmètre, son autorité et sa responsabilité doivent être explicites.
 - Une copie ou une synthèse ne devient pas une source de vérité par simple duplication.
-- Toute modification de référence est effectuée dans la source de vérité avant d'être répercutée ailleurs.
+- Toute modification appelée à faire autorité est effectuée dans la source de vérité avant d'être répercutée ailleurs.
 - Toute divergence est résolue à partir de la source de vérité ou par une décision explicite qui la remplace.
 - Une information inconnue ou non validée demeure signalée comme telle.
 
@@ -347,10 +343,6 @@ Elle permet de savoir quelle information fait foi, de prévenir les contradictio
 - Reference
 - Document
 - Artifact
-- Responsibility
-- Validation
-- Consistency
-- Traceability
 
 ### Layer
 
