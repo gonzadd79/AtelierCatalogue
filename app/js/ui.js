@@ -3,7 +3,7 @@
 
   var lastDialogTrigger = null;
   var dialogHandlersReady = false;
-  var searchHandlersReady = false;
+  var catalogControlHandlersReady = false;
   var allCatalogItems = [];
   var filterCatalogItems = null;
 
@@ -177,30 +177,58 @@
     });
   }
 
-  function updateSearchResults(query) {
-    var hasQuery = query.trim().length > 0;
-    var items = filterCatalogItems(allCatalogItems, query);
-    var noResults = hasQuery && items.length === 0;
+  function appendFilterOption(select, value, label) {
+    var option = document.createElement("option");
+    option.value = value;
+    option.textContent = label;
+    select.appendChild(option);
+  }
+
+  function populateFilter(select, defaultLabel, values) {
+    select.replaceChildren();
+    appendFilterOption(select, "", defaultLabel);
+    values.forEach(function (value) {
+      appendFilterOption(select, value, value);
+    });
+    select.value = "";
+  }
+
+  function updateCatalogResults() {
+    var input = document.getElementById("catalog-search-input");
+    var categoryFilter = document.getElementById("catalog-category-filter");
+    var locationFilter = document.getElementById("catalog-location-filter");
+    var hasCriteria = input.value.trim().length > 0 || categoryFilter.value || locationFilter.value;
+    var items = filterCatalogItems(allCatalogItems, {
+      query: input.value,
+      categoryName: categoryFilter.value,
+      locationName: locationFilter.value
+    });
+    var noResults = Boolean(hasCriteria) && items.length === 0;
     renderCatalogCards(items);
     document.getElementById("catalog-grid").hidden = noResults;
     document.getElementById("catalog-no-results").hidden = !noResults;
-    document.getElementById("catalog-summary").textContent = hasQuery
+    document.getElementById("catalog-summary").textContent = hasCriteria
       ? formatItemCount(items.length) + " sur " + allCatalogItems.length
       : formatItemCount(allCatalogItems.length);
   }
 
-  function initializeSearch(items, filterItems) {
+  function initializeCatalogControls(items, filterItems, getFilterValues) {
     var input = document.getElementById("catalog-search-input");
+    var categoryFilter = document.getElementById("catalog-category-filter");
+    var locationFilter = document.getElementById("catalog-location-filter");
+    var filterValues = getFilterValues(items);
     allCatalogItems = items.slice();
     filterCatalogItems = filterItems;
     input.value = "";
-    if (!searchHandlersReady) {
-      input.addEventListener("input", function () {
-        updateSearchResults(input.value);
-      });
-      searchHandlersReady = true;
+    populateFilter(categoryFilter, "Toutes les catégories", filterValues.categories);
+    populateFilter(locationFilter, "Tous les emplacements", filterValues.locations);
+    if (!catalogControlHandlersReady) {
+      input.addEventListener("input", updateCatalogResults);
+      categoryFilter.addEventListener("change", updateCatalogResults);
+      locationFilter.addEventListener("change", updateCatalogResults);
+      catalogControlHandlersReady = true;
     }
-    updateSearchResults("");
+    updateCatalogResults();
   }
 
   function renderError(error) {
@@ -216,7 +244,7 @@
   global.AtelierCatalog.ui = {
     renderDashboard: renderDashboard,
     renderCatalog: renderCatalog,
-    initializeSearch: initializeSearch,
+    initializeCatalogControls: initializeCatalogControls,
     renderError: renderError
   };
 }(window));

@@ -38,6 +38,13 @@ Noter navigateur, version, système, chemin source, chemin copié et date.
 - [ ] Effacer entièrement le champ et vérifier le retour des `15` cartes.
 - [ ] Pendant chaque recherche, vérifier que les compteurs restent à `15` articles, `3` projets et `8` catégories.
 - [ ] Parcourir le champ et les cartes filtrées au clavier, puis ouvrir et fermer une fiche.
+- [ ] Vérifier que les listes Catégorie et Emplacement sont générées depuis les données, sans doublon, avec les choix « Toutes… » en premier.
+- [ ] Sélectionner une catégorie puis un emplacement et vérifier que les deux critères se combinent instantanément.
+- [ ] Combiner une recherche avec une catégorie, puis avec un emplacement.
+- [ ] Produire une combinaison sans correspondance et vérifier la réutilisation du même état « Aucun composant ne correspond à votre recherche. ».
+- [ ] Revenir à « Toutes les catégories » puis « Tous les emplacements » et vérifier la restauration complète des `15` cartes.
+- [ ] Pendant les filtres, vérifier que les compteurs restent à `15` articles, `3` projets et `8` catégories.
+- [ ] Utiliser les deux listes déroulantes uniquement au clavier et vérifier leur focus visible.
 - [ ] Vérifier plusieurs colonnes sur desktop, moins sur tablette et une colonne sous `40rem`.
 - [ ] Vérifier que `index.html` avec les données réelles vides ne montre aucune grille.
 - [ ] Vérifier que `demo.html` ne charge aucun fichier de `data/`.

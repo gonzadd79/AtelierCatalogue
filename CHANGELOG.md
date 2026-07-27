@@ -15,6 +15,7 @@ Structure inspirée de Keep a Changelog, sans revendication de conformité forme
 - FEATURE-003 : vue Catalogue responsive avec cartes accessibles et placeholders entièrement locaux.
 - FEATURE-004 : ouverture accessible d'une fiche composant modale en lecture seule avec restauration du focus.
 - FEATURE-005 : recherche instantanée locale sur le nom, la catégorie et l'emplacement, avec état sans résultat.
+- FEATURE-006 : filtres locaux par catégorie et emplacement, générés depuis les données et combinables avec la recherche.
 
 ### Changed
 

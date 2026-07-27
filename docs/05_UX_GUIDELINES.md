@@ -49,6 +49,8 @@ Depuis FEATURE-005, la recherche est visible au-dessus d'un catalogue contenant 
 
 La V1 reste textuelle et explicable. Elle ne prétend pas comprendre sémantiquement une demande. La saisie annonce le nombre de cartes correspondantes, laisse les compteurs généraux inchangés et permet une réinitialisation immédiate par effacement. La conservation de la recherche entre plusieurs vues reste une évolution future.
 
+Depuis FEATURE-006, les catégories et emplacements réellement présents dans le catalogue alimentent deux filtres explicites. Ils se combinent entre eux et avec la recherche, sans modifier les compteurs généraux. Revenir au choix « Toutes… » retire immédiatement le critère concerné et toute combinaison vide conserve le même état sans résultat.
+
 ## Cartes d'objets
 
 Une carte permet de décider en un regard si l'article est probablement exploitable. Elle contient, lorsque les données existent :

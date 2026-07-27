@@ -52,10 +52,26 @@
         </div>
         <p id="catalog-summary"></p>
       </div>
-      <div class="catalog-search">
-        <label for="catalog-search-input">Rechercher un composant</label>
-        <input id="catalog-search-input" type="search" placeholder="Rechercher un composant…" autocomplete="off" aria-describedby="catalog-search-help" aria-controls="catalog-grid catalog-no-results">
-        <p id="catalog-search-help">Recherche dans le nom, la catégorie et l'emplacement.</p>
+      <div class="catalog-controls">
+        <div class="catalog-search">
+          <label for="catalog-search-input">Rechercher un composant</label>
+          <input id="catalog-search-input" type="search" placeholder="Rechercher un composant…" autocomplete="off" aria-describedby="catalog-search-help" aria-controls="catalog-grid catalog-no-results">
+          <p id="catalog-search-help">Recherche dans le nom, la catégorie et l'emplacement.</p>
+        </div>
+        <div class="catalog-filters" role="group" aria-label="Filtres du catalogue">
+          <div class="catalog-filter">
+            <label for="catalog-category-filter">Catégorie</label>
+            <select id="catalog-category-filter" aria-controls="catalog-grid catalog-no-results">
+              <option value="">Toutes les catégories</option>
+            </select>
+          </div>
+          <div class="catalog-filter">
+            <label for="catalog-location-filter">Emplacement</label>
+            <select id="catalog-location-filter" aria-controls="catalog-grid catalog-no-results">
+              <option value="">Tous les emplacements</option>
+            </select>
+          </div>
+        </div>
       </div>
       <div id="catalog-no-results" class="search-empty" role="status" aria-live="polite" aria-atomic="true" hidden>
         <h3>Aucun composant ne correspond à votre recherche.</h3>
