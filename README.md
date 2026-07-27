@@ -17,7 +17,7 @@ AtelierCatalog est un catalogue personnel, local et portable pour inventorier, d
 
 - `data/` contient exclusivement les données réelles publiées (initialement vides).
 - `samples/` contient uniquement des démonstrations explicitement fictives.
-- `media/` contient les médias publiés.
+- `media/items/<item-id>/` contient les photos réelles publiées, associées aux articles par leur champ `media[].path` relatif.
 - `annexes/` contient les documents associés publiés.
 - `intake/` reçoit les originaux en attente de traitement ou de validation.
 - `app/` contient l'interface sans dépendance ; `schemas/` les contrats initiaux ; `docs/` les décisions produit et techniques ; `tests/` les contrôles manuels ; `tools/` est réservé aux futurs outils optionnels.
@@ -26,7 +26,7 @@ AtelierCatalog est un catalogue personnel, local et portable pour inventorier, d
 
 Double-cliquer sur `index.html`. Le catalogue affiche les articles réels sous forme de cartes ou, lorsqu'il est vide, l'état d'accueil initial. Lorsqu'il contient des articles, la recherche locale et les filtres générés depuis les données limitent instantanément les cartes par nom, catégorie ou emplacement. Aucune connexion Internet n'est nécessaire. Les exemples ne sont jamais chargés par défaut.
 
-Pour le développement et les démonstrations, ouvrir explicitement `demo.html`. Sa bannière indique que les données sont fictives et permet de revenir à `index.html`. Les 15 articles fictifs y sont visibles sous forme de cartes. Les deux pages restent compatibles avec `file://` et ne chargent jamais leurs sources de données simultanément.
+Pour le développement et les démonstrations, ouvrir explicitement `demo.html`. Sa bannière indique que les données sont fictives et permet de revenir à `index.html`. Les 15 articles fictifs y sont visibles sous forme de cartes ; l'un d'eux référence une photo locale dans `samples/assets/images/`. Les deux pages restent compatibles avec `file://` et ne chargent jamais leurs sources de données simultanément.
 
 ## Méthode de travail
 

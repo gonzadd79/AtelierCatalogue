@@ -45,6 +45,11 @@ Noter navigateur, version, système, chemin source, chemin copié et date.
 - [ ] Revenir à « Toutes les catégories » puis « Tous les emplacements » et vérifier la restauration complète des `15` cartes.
 - [ ] Pendant les filtres, vérifier que les compteurs restent à `15` articles, `3` projets et `8` catégories.
 - [ ] Utiliser les deux listes déroulantes uniquement au clavier et vérifier leur focus visible.
+- [ ] Vérifier que la carte ESP32 fictive affiche sa photo locale et que les autres cartes conservent leur placeholder.
+- [ ] Ouvrir la fiche ESP32 fictive et vérifier que la même photo locale est affichée avec un texte alternatif pertinent.
+- [ ] Dans une copie de test, rendre temporairement le chemin de la photo invalide et vérifier le retour automatique au placeholder, sans icône cassée ni erreur JavaScript.
+- [ ] Vérifier qu'aucune image de `samples/` n'est chargée par `index.html` et qu'aucune donnée réelle n'est modifiée.
+- [ ] Vérifier la photo et son recadrage sur desktop, tablette et smartphone.
 - [ ] Vérifier plusieurs colonnes sur desktop, moins sur tablette et une colonne sous `40rem`.
 - [ ] Vérifier que `index.html` avec les données réelles vides ne montre aucune grille.
 - [ ] Vérifier que `demo.html` ne charge aucun fichier de `data/`.

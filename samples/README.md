@@ -2,6 +2,8 @@
 
 Les fichiers de ce dossier décrivent **15 articles, 8 catégories, 8 emplacements et 3 projets entièrement fictifs**. Ils ne font pas partie du stock réel, ne proviennent pas de l'utilisateur et ne garantissent aucune caractéristique d'un produit commercial.
 
+Les images de démonstration sont stockées dans `samples/assets/images/` et référencées par un chemin relatif dans `media[].path`. Elles restent fictives ; `showsOwnedItem` vaut toujours `false` afin de ne jamais les présenter comme des photos personnelles.
+
 ## Activer la démonstration
 
 Ouvrir directement `demo.html`, par double-clic ou avec son URL locale `file://`. Une bannière « Jeu de démonstration — Données fictives » confirme le mode actif. Ce point d'entrée charge uniquement :

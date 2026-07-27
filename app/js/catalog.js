@@ -51,19 +51,47 @@
     return stockUnit ? quantity.total + " " + stockUnit : String(quantity.total);
   }
 
+  function isSafeLocalPath(path) {
+    if (typeof path !== "string" || !path.trim()) {
+      return false;
+    }
+    if (/^(?:[a-z]+:|\/|\\|\/\/)/i.test(path) || /(?:^|[\\/])\.\.(?:[\\/]|$)/.test(path)) {
+      return false;
+    }
+    return true;
+  }
+
+  function getAssetImagePath(asset) {
+    if (!asset) {
+      return null;
+    }
+    if (isSafeLocalPath(asset.thumbnailPath)) {
+      return asset.thumbnailPath;
+    }
+    return isSafeLocalPath(asset.path) ? asset.path : null;
+  }
+
   function getLocalImagePath(media) {
+    var position;
+    var path;
     if (!Array.isArray(media)) {
       return null;
     }
-    var preferred = media.find(function (asset) { return asset && asset.isPrimary; }) || media[0];
-    if (!preferred || typeof preferred.path !== "string") {
-      return null;
+    for (position = 0; position < media.length; position += 1) {
+      if (media[position] && media[position].isPrimary) {
+        path = getAssetImagePath(media[position]);
+        if (path) {
+          return path;
+        }
+      }
     }
-    var path = preferred.thumbnailPath || preferred.path;
-    if (/^(?:[a-z]+:|\/|\\|\/\/)/i.test(path) || /(?:^|\/)\.\.(?:\/|$)/.test(path)) {
-      return null;
+    for (position = 0; position < media.length; position += 1) {
+      path = getAssetImagePath(media[position]);
+      if (path) {
+        return path;
+      }
     }
-    return path;
+    return null;
   }
 
   function getCatalogItems(data) {

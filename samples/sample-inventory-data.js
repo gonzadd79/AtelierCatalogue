@@ -17,7 +17,22 @@ window.AtelierCatalogSampleData.inventory = {
       confidence: "manually-confirmed",
       tags: ["esp32", "wifi", "démonstration"],
       projectIds: ["demo-environment-monitor"],
-      specifications: [], media: [], documents: [], sources: []
+      specifications: [],
+      media: [
+        {
+          id: "demo-esp32-board-photo",
+          type: "photo",
+          role: "main",
+          path: "samples/assets/images/demo-esp32-board.png",
+          thumbnailPath: null,
+          caption: "Illustration fictive d'une carte de développement générique.",
+          origin: "generated-demonstration",
+          isPrimary: true,
+          showsOwnedItem: false,
+          rights: "Image générée pour la démonstration AtelierCatalog."
+        }
+      ],
+      documents: [], sources: []
     },
     {
       id: "demo-arduino-board",
