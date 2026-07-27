@@ -125,19 +125,71 @@ Il rend un résultat observable, consultable, transmissible et vérifiable afin 
 
 ### Reference
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Une référence est un artefact explicitement désigné comme point de consultation reconnu pour un sujet et un périmètre donnés. Contrairement à un document, dont la nature ne présume pas l'autorité, une référence se distingue par le rôle qui lui est attribué dans l'interprétation, la décision ou la vérification d'une information.
+
+## Purpose
+
+Elle fournit un repère commun et fiable pour retrouver, comprendre ou vérifier une information, tout en réduisant les interprétations divergentes.
+
+## Rules
+
+- Le rôle de référence doit être attribué explicitement.
+- Son sujet, son périmètre et son niveau d'autorité doivent être identifiables.
+- Elle doit être accessible aux personnes qui en ont l'usage.
+- Elle doit être tenue à jour tant qu'elle conserve son rôle ou clairement signalée lorsqu'elle ne fait plus autorité.
+- Lorsque plusieurs références couvrent un même sujet, leur priorité ou leur complémentarité doit être explicite.
+- Une copie ou une synthèse ne devient pas une référence sans désignation explicite.
+- Une référence peut conduire à une source de vérité sans être elle-même cette source.
+
+## Examples
+
+- Un document terminologique approuvé sert de référence pour les termes officiels d'une organisation.
+- Une politique publiée sert de référence pour les règles applicables dans son périmètre.
+- Un registre maintenu sert de référence pour consulter l'état reconnu des éléments suivis.
+
+## Related Concepts
+
+- Source of Truth
+- Artifact
+- Document
 
 ### Template
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Un template est une structure réutilisable qui organise les éléments attendus lors de la création d'artefacts cohérents. Il fournit une forme, des rubriques ou des repères à compléter sans déterminer le contenu propre à chaque artefact.
+
+## Purpose
+
+Il facilite la production répétée d'artefacts comparables, réduit les omissions et préserve une structure commune sans remplacer le jugement nécessaire à leur contenu.
+
+## Rules
+
+- Un template possède un objectif et un type d'artefact attendu clairement identifiables.
+- Il ne contient que la structure, les repères et les instructions utiles à son usage récurrent.
+- Les éléments fixes doivent être distingués des éléments à compléter.
+- Il reste générique et ne préjuge pas du contenu propre à un usage particulier.
+- Son utilisation ne garantit ni la qualité, ni l'approbation, ni l'autorité de l'artefact produit.
+- Il évolue lorsque les besoins communs de structure changent, sans altérer rétroactivement les artefacts déjà produits.
+- Chaque artefact produit demeure autonome et doit pouvoir être compris indépendamment du template.
+
+## Examples
+
+- Une structure de rapport de revue indique les rubriques attendues sans fournir les constats.
+- Un cadre de relevé de décision réserve des emplacements pour le contexte, le choix et les conséquences.
+- Une trame de présentation initiale organise les objectifs, le périmètre et les parties prenantes à renseigner.
+
+## Related Concepts
+
+- Artifact
+- Document
+- Reference
 
 ### Example
 
