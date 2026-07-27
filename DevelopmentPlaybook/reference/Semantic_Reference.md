@@ -193,11 +193,39 @@ Il facilite la production répétée d'artefacts comparables, réduit les omissi
 
 ### Example
 
-Status: Planned
+Status: Approved
 
-Description:
+## Definition
 
-(TODO)
+Un exemple est une illustration concrète et non normative d'une manière possible d'appliquer, de représenter ou de comprendre une idée, une règle ou une structure. Il présente un cas particulier sans prescrire sa reproduction.
+
+## Purpose
+
+Il rend une notion abstraite plus facile à comprendre, montre un résultat possible et aide à interpréter une intention sans exclure d'autres solutions valides.
+
+## Rules
+
+- Un exemple doit être clairement présenté comme illustratif et non obligatoire.
+- Son contexte et ses hypothèses doivent être suffisamment explicites pour éviter une généralisation abusive.
+- Il doit rester cohérent avec l'idée, la règle ou la structure qu'il illustre.
+- Il doit privilégier la clarté et ne pas introduire implicitement de nouvelles exigences.
+- Une variation par rapport à un exemple n'est pas une erreur lorsqu'elle respecte les exigences applicables.
+- Lorsqu'il illustre un template, il montre une manière de le compléter sans modifier ni remplacer sa structure.
+- Il ne devient ni une référence ni une source de vérité par sa seule existence.
+
+## Examples
+
+- Un dossier fictif complété montre une utilisation possible d'un template de cadrage.
+- Un relevé de décision fictif illustre un niveau de détail adapté à une situation donnée.
+- Une entrée terminologique renseignée montre une présentation possible d'une définition.
+
+## Related Concepts
+
+- Template
+- Artifact
+- Document
+- Reference
+- Source of Truth
 
 ### Prompt
 
