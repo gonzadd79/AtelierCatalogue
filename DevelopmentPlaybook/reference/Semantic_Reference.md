@@ -552,21 +552,260 @@ Description:
 
 (TODO)
 
+### Knowledge
+
+Status: Approved
+
+#### Definition
+
+Une connaissance est une compréhension tenue pour suffisamment fondée pour informer un jugement, une décision ou une action. Elle reste révisable lorsque de nouveaux éléments remettent en cause ce qui la soutient.
+
+#### Purpose
+
+Elle rend une compréhension utilisable, partageable et durable sans la présenter comme une certitude définitive.
+
+#### Rules
+
+- Une connaissance doit reposer sur des éléments identifiables plutôt que sur une affirmation sans fondement.
+- Son niveau d'incertitude et les limites de sa validité doivent rester explicites lorsqu'ils sont pertinents.
+- Une observation isolée ne devient pas une connaissance sans interprétation suffisamment étayée.
+- Elle doit pouvoir être révisée lorsqu'une validation ou de nouvelles observations la contredisent.
+- Sa reconnaissance comme connaissance ne lui confère pas automatiquement une autorité normative.
+- Elle peut exister avant, pendant ou après un cycle d'évolution de la connaissance.
+
+#### Examples
+
+- Une régularité constatée dans plusieurs situations comparables est retenue comme suffisamment fiable pour orienter de prochains choix.
+- Une explication est considérée comme établie après avoir été confrontée à plusieurs observations concordantes.
+- Une compréhension précédemment admise est révisée lorsque de nouveaux éléments montrent qu'elle ne vaut que dans certaines conditions.
+
+#### Related Concepts
+
+- Observation
+- Validation
+
+### Observation
+
+Status: Approved
+
+#### Definition
+
+Une observation est l'énoncé explicite d'un phénomène constaté dans un contexte donné, sans lui attribuer par elle-même une explication ni décider de ses conséquences.
+
+#### Purpose
+
+Elle rend un constat disponible pour être examiné, comparé ou utilisé comme point de départ d'une évolution de la connaissance.
+
+#### Rules
+
+- Une observation doit décrire ce qui est constaté sans le présenter comme une explication.
+- Son contexte et ses conditions doivent être indiqués lorsqu'ils influencent sa compréhension.
+- Toute incertitude concernant le constat doit rester visible.
+- Elle ne constitue par elle-même ni une décision ni une connaissance établie.
+- Elle peut être conservée sans conduire obligatoirement à une question ou à une action ultérieure.
+
+#### Examples
+
+- Un même résultat varie régulièrement lorsque les conditions d'utilisation changent.
+- Une information est interprétée différemment par plusieurs personnes confrontées au même énoncé.
+- Un comportement attendu ne se produit pas dans une situation précisément décrite.
+
+#### Related Concepts
+
+- Knowledge
+- Question
+
+### Question
+
+Status: Approved
+
+#### Definition
+
+Une question est la formulation explicite d'une incertitude dont la résolution améliorerait la compréhension d'un sujet. Elle précise ce qui doit être examiné sans présumer de la réponse.
+
+#### Purpose
+
+Elle délimite l'incertitude à traiter et oriente l'examen vers un besoin de connaissance identifiable.
+
+#### Rules
+
+- Une question doit rendre l'incertitude compréhensible et suffisamment précise pour être examinée.
+- Elle ne doit contenir ni réponse implicite ni choix déjà arrêté.
+- Elle peut provenir d'une observation, d'une contradiction ou d'une limite de connaissance.
+- Elle doit rester ouverte à plusieurs réponses possibles tant qu'aucun élément ne permet de les départager.
+- Elle n'impose pas la formulation immédiate d'une hypothèse.
+
+#### Examples
+
+- Quelles conditions expliquent la variation observée entre deux situations comparables ?
+- Quelle information manque pour distinguer deux interprétations possibles ?
+- Le constat reste-t-il valable lorsque le contexte change ?
+
+#### Related Concepts
+
+- Observation
+- Hypothesis
+
+### Hypothesis
+
+Status: Approved
+
+#### Definition
+
+Une hypothèse est une proposition provisoire susceptible d'expliquer un phénomène ou de répondre à une question et pouvant être examinée à partir d'éléments pertinents.
+
+#### Purpose
+
+Elle rend une explication ou une réponse possible explicite afin qu'elle puisse être comparée, discutée et éprouvée sans être confondue avec une connaissance établie.
+
+#### Rules
+
+- Une hypothèse doit exprimer une proposition identifiable et examinable.
+- Elle doit rester présentée comme provisoire tant qu'elle n'est pas suffisamment étayée.
+- Plusieurs hypothèses peuvent coexister pour une même question.
+- Elle doit pouvoir être confrontée à des observations, des connaissances ou d'autres éléments pertinents.
+- Son rejet ne constitue pas un échec lorsque son examen réduit l'incertitude.
+- Elle ne devient ni une décision ni une connaissance par sa seule formulation.
+
+#### Examples
+
+- La variation constatée pourrait dépendre d'une condition présente dans un seul des contextes observés.
+- Deux interprétations divergentes pourraient provenir d'un terme insuffisamment défini.
+- Un résultat inattendu pourrait être lié à une hypothèse initiale qui ne vaut pas dans toutes les situations.
+
+#### Related Concepts
+
+- Question
+- Review
+
 ### Review
 
-Status: Planned
+Status: Approved
 
-Description:
+#### Definition
 
-(TODO)
+Une review est un examen structuré d'un ou plusieurs éléments visant à apprécier leur cohérence, leur pertinence et le niveau de soutien dont ils disposent. Elle confronte les interprétations possibles sans déterminer automatiquement le choix à retenir.
+
+#### Purpose
+
+Elle rend l'évaluation explicite, met en évidence les accords et les divergences et fournit des éléments utiles à une décision ou à un approfondissement.
+
+#### Rules
+
+- Une review doit préciser les éléments examinés et les critères utilisés.
+- Elle doit distinguer les constats disponibles des interprétations qui en sont tirées.
+- Elle peut confronter plusieurs hypothèses sans devoir en retenir une.
+- Ses conclusions et les incertitudes restantes doivent être explicites.
+- Elle ne constitue pas automatiquement une décision, une validation ou une approbation.
+- Elle peut être réalisée chaque fois qu'un examen structuré apporte une valeur, sans dépendre d'une séquence obligatoire.
+
+#### Examples
+
+- Plusieurs explications possibles sont comparées aux observations disponibles et leurs limites respectives sont consignées.
+- Un ensemble d'énoncés est examiné afin d'identifier les contradictions et les ambiguïtés.
+- Les éléments soutenant un choix envisagé sont confrontés aux incertitudes encore présentes.
+
+#### Related Concepts
+
+- Hypothesis
+- Decision
+
+### Decision
+
+Status: Approved
+
+#### Definition
+
+Une décision est un choix explicite entre plusieurs possibilités ou orientations, effectué à partir des éléments disponibles dans un périmètre donné. Elle établit ce qui est retenu sans transformer ce choix en vérité générale.
+
+#### Purpose
+
+Elle permet d'orienter la suite des actions tout en conservant la raison du choix, son périmètre et les incertitudes qui subsistent.
+
+#### Rules
+
+- Une décision doit exprimer clairement le choix retenu.
+- Son périmètre, sa justification et ses conséquences significatives doivent pouvoir être identifiés.
+- Les incertitudes pertinentes ne doivent pas être masquées par le fait qu'un choix a été arrêté.
+- Elle doit pouvoir être réexaminée lorsque les éléments qui la soutiennent évoluent.
+- Elle ne transforme pas automatiquement une hypothèse en connaissance.
+- Elle peut exister sans être immédiatement mise en application.
+
+#### Examples
+
+- Parmi plusieurs explications possibles, l'une est retenue comme base de travail et les raisons de ce choix sont consignées.
+- Une règle commune est choisie pour résoudre une ambiguïté récurrente dans un périmètre défini.
+- Une orientation antérieure est remplacée après l'apparition d'éléments qui invalident sa justification.
+
+#### Related Concepts
+
+- Review
+- Implementation
+
+### Implementation
+
+Status: Approved
+
+#### Definition
+
+Une implémentation est l'application concrète d'une décision au moyen d'un changement, d'une action, d'une disposition ou d'une pratique observable. Elle matérialise le choix sans démontrer par elle-même qu'il produit le résultat recherché.
+
+#### Purpose
+
+Elle rend les effets d'une décision observables afin qu'ils puissent être utilisés, examinés et éventuellement validés.
+
+#### Rules
+
+- Une implémentation doit pouvoir être reliée à la décision qu'elle applique.
+- Elle doit respecter le périmètre et l'intention déclarés de cette décision.
+- Elle peut être partielle lorsque ses limites sont explicites.
+- Elle ne doit pas être confondue avec le développement logiciel ni limitée à celui-ci.
+- Sa réalisation ne constitue ni une validation ni une preuve de pertinence.
+- Elle peut être adaptée ou retirée lorsque la décision évolue.
+
+#### Examples
+
+- Une règle choisie est appliquée à un ensemble de situations afin de rendre ses effets observables.
+- Une nouvelle manière de classer une information est mise en pratique dans le périmètre retenu.
+- Une orientation est matérialisée par un changement d'organisation dont les résultats pourront être examinés.
+
+#### Related Concepts
+
+- Decision
+- Validation
 
 ### Validation
 
-Status: Planned
+Status: Approved
 
-Description:
+#### Definition
 
-(TODO)
+Une validation est une évaluation fondée sur des éléments observables visant à déterminer si une proposition, une décision, une implémentation ou une connaissance demeure suffisamment soutenue dans son périmètre. Elle peut confirmer, nuancer ou remettre en question ce qui est évalué.
+
+#### Purpose
+
+Elle réduit l'incertitude en confrontant ce qui est attendu ou tenu pour valable aux résultats et aux éléments effectivement disponibles.
+
+#### Rules
+
+- Une validation doit préciser ce qui est évalué, dans quel périmètre et sur quels éléments elle repose.
+- Ses critères doivent être identifiables avant que sa conclusion soit interprétée.
+- Elle doit distinguer les résultats observés de la conclusion qui en est tirée.
+- Elle ne doit pas être confondue avec l'implémentation de ce qu'elle évalue.
+- Elle ne produit pas une certitude définitive et reste valable dans les limites des éléments examinés.
+- Un résultat défavorable ou ambigu doit rester visible et peut conduire à réviser une décision ou une connaissance.
+- Elle peut intervenir chaque fois qu'une affirmation doit être éprouvée, sans constituer obligatoirement la dernière étape d'une séquence.
+
+#### Examples
+
+- Les effets observés après l'application d'un choix sont comparés aux résultats attendus.
+- Une explication tenue pour valable est réexaminée dans un contexte différent afin d'en vérifier les limites.
+- Des éléments nouveaux conduisent à confirmer une compréhension tout en réduisant son domaine de validité.
+
+#### Related Concepts
+
+- Implementation
+- Knowledge
 
 ### Acceptance Criteria
 
