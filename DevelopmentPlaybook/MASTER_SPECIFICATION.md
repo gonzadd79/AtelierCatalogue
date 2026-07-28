@@ -1,87 +1,10 @@
-# Master Specification
+# Master Specification — Framework Constitution
 
-Ce document constitue l'unique source de vérité de DevelopmentPlaybook.
+`MASTER_SPECIFICATION.md` est la Constitution de DevelopmentPlaybook, son registre d'autorité documentaire et son point d'entrée.
 
-## Detailed References
+Il est normatif uniquement pour l'identité du Framework, ses principes fondateurs et son architecture documentaire globale. Les connaissances spécialisées sont maintenues dans leurs sources canoniques. Tout résumé présenté ici est non normatif et renvoie vers la Reference concernée.
 
-Les développements détaillés sont maintenus dans les documents spécialisés du dossier `reference/`. `MASTER_SPECIFICATION.md` reste volontairement compact et demeure le point d'entrée du projet.
-
-# PART I — Identity
-
-## Glossary
-
-### Identity
-
-### Vision
-
-### Mission
-
-### Philosophy
-
-### Goal
-
-### Non-goal
-
-### Blueprint
-
-### Epic
-
-### Feature
-
-### Story
-
-### Milestone
-
-### Artifact
-
-### Template
-
-### Prompt
-
-## Source of Truth
-
-### Definition
-
-Une source de vérité est la référence officiellement reconnue comme faisant autorité pour un ensemble d'informations défini. Lorsqu'une information existe sous plusieurs formes, elle détermine laquelle est considérée comme actuelle et fiable.
-
-### Purpose
-
-Une source unique de vérité évite que des versions concurrentes produisent des interprétations, des décisions ou des actions contradictoires. Elle permet à chacun de partager le même état de référence, de comprendre où une information doit être maintenue et de vérifier les écarts dans le temps.
-
-### Rules
-
-- Le périmètre couvert par la source de vérité doit être explicite.
-- Un même sujet ne doit avoir qu'une seule référence faisant autorité à un instant donné.
-- Toute évolution validée doit être intégrée dans la source de vérité concernée.
-- Les résumés, copies et documents dérivés doivent renvoyer vers la source de vérité et ne pas la remplacer.
-- Une contradiction doit être résolue dans la source de vérité, non masquée par une nouvelle version parallèle.
-- La responsabilité de maintenir chaque source de vérité doit être clairement attribuée.
-- Les informations inconnues, provisoires ou contestées doivent conserver explicitement cet état.
-
-### Examples
-
-- Une politique produit officielle fait autorité ; les présentations qui la résument renvoient vers elle.
-- Une feuille de route validée porte les priorités courantes ; les comptes rendus n'en créent pas une version concurrente.
-- Un glossaire officiel fixe le sens des termes partagés ; les autres documents réutilisent ce vocabulaire sans le redéfinir.
-
-### Related concepts
-
-- Artifact
-- Architecture Decision
-- Documentation Standard
-- Revision History
-
-### Implementation
-
-### Refactoring
-
-### Architecture Decision
-
-### Product Review
-
-### UX Review
-
-### Technical Debt
+# Framework Identity
 
 ## Vision
 
@@ -93,7 +16,7 @@ DevelopmentPlaybook existe pour offrir un cadre durable au développement assist
 
 L'assistance par IA peut accélérer le travail sans garantir la cohérence, la qualité ni la continuité. Lorsque les objectifs, les responsabilités, les décisions et les critères de validation sont mal définis, les résultats deviennent difficiles à reproduire, à expliquer et à faire évoluer.
 
-DevelopmentPlaybook rassemble ces repères dans une source de vérité unique. Il aide à conserver l'intention du produit, à structurer la collaboration entre l'humain et l'IA et à rendre les choix vérifiables dans le temps.
+DevelopmentPlaybook organise ces repères au sein de sources canoniques clairement délimitées. Il aide à conserver l'intention du produit, à structurer la collaboration entre l'humain et l'IA et à rendre les choix vérifiables dans le temps.
 
 ### Utilisateurs
 
@@ -108,17 +31,6 @@ DevelopmentPlaybook s'adresse aux personnes et aux équipes qui conçoivent, pil
 - Favoriser une progression maîtrisée, fondée sur des résultats vérifiables.
 - Permettre à la méthode d'évoluer sans perdre son identité ni sa cohérence.
 
-### Principes fondateurs
-
-- **Responsabilité humaine.** L'IA assiste ; l'humain reste responsable des intentions, des choix et des résultats.
-- **Intention explicite.** Le besoin, le périmètre et les critères de réussite précèdent l'action.
-- **Source de vérité unique.** Les règles de référence sont réunies, cohérentes et maintenues dans le temps.
-- **Traçabilité utile.** Les décisions importantes sont compréhensibles et peuvent être réexaminées.
-- **Progression vérifiable.** Le travail avance par étapes limitées dont le résultat peut être évalué.
-- **Simplicité.** Chaque règle doit apporter une valeur claire et rester facile à appliquer.
-- **Amélioration continue.** La méthode évolue à partir de l'expérience sans accumuler de contradictions.
-- **Indépendance.** Le référentiel reste applicable à des contextes variés et ne dépend d'aucun projet particulier.
-
 ### Limites volontaires
 
 DevelopmentPlaybook ne cherche pas à remplacer le jugement, l'expertise ou la responsabilité humaine. Il ne promet pas une qualité automatique et n'impose pas une manière unique de travailler à tous les contextes.
@@ -127,110 +39,73 @@ Il ne cherche pas non plus à devenir un logiciel, une plateforme d'exécution, 
 
 ## Mission
 
-DevelopmentPlaybook donne aux personnes et aux équipes un cadre commun pour préparer, conduire, examiner et faire évoluer un travail de développement assisté par intelligence artificielle. Au quotidien, il les aide à clarifier l'intention du produit, limiter le périmètre des changements, documenter les décisions, vérifier les résultats et maintenir une source de vérité cohérente, sous responsabilité humaine.
+DevelopmentPlaybook donne aux personnes et aux équipes un cadre commun pour préparer, conduire, examiner et faire évoluer un travail de développement assisté par intelligence artificielle. Au quotidien, il les aide à clarifier l'intention du produit, limiter le périmètre des changements, documenter les décisions, vérifier les résultats et maintenir des sources canoniques cohérentes, sous responsabilité humaine.
 
 ## Core Principles
 
-### Product before implementation
+- **Product before implementation.** L'intention du produit, le besoin à satisfaire et le résultat attendu priment sur la manière de les réaliser.
+- **User value over technical elegance.** La valeur apportée à l'utilisateur prévaut sur la sophistication ou l'élégance d'une solution.
+- **One source of truth.** Chaque règle, orientation ou référence en vigueur possède une source canonique unique dans son périmètre.
+- **Explain decisions, not only decisions.** Une décision importante conserve son contexte, sa raison d'être et ses conséquences, et non son seul résultat.
+- **Small incremental changes.** Les évolutions restent limitées, cohérentes et compréhensibles.
+- **Documentation is part of the product.** La documentation appartient pleinement au produit et répond aux mêmes exigences de clarté, d'exactitude et de continuité.
+- **Architecture evolves intentionally.** L'architecture évolue par des choix explicites, justifiés et compatibles avec l'identité du produit.
+- **Reviews before commits.** Toute évolution significative est examinée avant d'être considérée comme une référence stable.
+- **Human validates product direction.** La direction du produit, ses priorités et ses compromis restent soumis à une validation humaine.
+- **Unknown remains unknown.** Une information absente, incertaine ou non vérifiée reste explicitement inconnue.
+- **Simple is preferable to clever.** La solution la plus simple qui répond durablement au besoin est préférée à une solution difficile à comprendre.
+- **Consistency over novelty.** La cohérence avec les conventions établies prévaut sur la nouveauté sans bénéfice démontré.
 
-**Principe.** L'intention du produit, le besoin à satisfaire et le résultat attendu priment sur la manière de les réaliser.
+# Documentation Architecture
 
-**Justification.** Une réalisation ne crée de valeur durable que lorsqu'elle sert un objectif produit clairement compris.
+DevelopmentPlaybook utilise une autorité fédérée par périmètre. Une question normative possède une seule source canonique, et chaque document officiel exerce uniquement l'autorité déclarée dans le registre.
 
-### User value over technical elegance
+## Authority Principles
 
-**Principe.** La valeur apportée à l'utilisateur prévaut sur la sophistication ou l'élégance d'une solution.
+- La Constitution définit l'identité, les principes fondateurs et le modèle documentaire du Framework.
+- Chaque Reference est normative uniquement dans son périmètre déclaré.
+- Le Semantic Reference est la seule source normative des concepts.
+- Les ADR conservent les décisions ; les règles permanentes sont maintenues dans leur source canonique.
+- La Roadmap fait autorité uniquement sur la planification.
+- Les portails et actifs dérivés peuvent résumer ou appliquer les References sans les redéfinir.
+- Les conflits sont résolus selon le périmètre concerné, puis selon le niveau d'autorité déclaré.
 
-**Justification.** Une solution remarquable en elle-même reste inadéquate si elle ne résout pas un problème réel de façon claire et fiable.
+## Document Taxonomy
 
-### One source of truth
+| Type | Responsabilité | Autorité |
+|---|---|---|
+| Constitution | Définir l'identité et les règles supérieures du Framework | Normative dans son périmètre constitutionnel |
+| Reference | Définir les connaissances et règles durables d'un domaine | Canonique dans son périmètre déclaré |
+| Decision | Conserver un choix, son contexte et ses conséquences | Décisionnelle et historique |
+| Planning | Décrire les priorités, jalons et statuts | Limitée à la planification |
+| Portal | Orienter vers les documents officiels | Descriptive et non normative |
+| Derived Asset | Faciliter l'application des References | Non normative |
 
-**Principe.** Les règles, orientations et références en vigueur doivent disposer d'une source officielle unique.
+Les documents de gouvernance sont des References spécialisées. Templates, Examples et Prompts sont des Derived Assets.
 
-**Justification.** Une autorité clairement identifiée limite les contradictions, les interprétations divergentes et la perte de cohérence dans le temps.
+## Dependency Model
 
-### Explain decisions, not only decisions
+- Une Reference peut dépendre de la Constitution, du Semantic Reference ou d'une autre Reference lorsque cette dépendance est explicite et non circulaire.
+- Un Derived Asset peut dépendre des References et d'autres actifs nécessaires à son usage.
+- Une source normative ne dépend jamais d'un Derived Asset, d'un Portal ou de la Roadmap.
+- Aucun document ne peut redéfinir une connaissance appartenant à une autre source canonique.
 
-**Principe.** Une décision importante doit conserver son contexte, sa raison d'être et ses conséquences, et non son seul résultat.
+# Documentation Authority Registry
 
-**Justification.** Le raisonnement permet d'évaluer la décision lorsque les circonstances changent et évite de répéter des débats déjà résolus.
+Le registre identifie les documents officiels et leur autorité. La présence d'un fichier ne suffit pas à lui conférer une autorité documentaire.
 
-### Small incremental changes
-
-**Principe.** Les évolutions doivent rester limitées, cohérentes et compréhensibles.
-
-**Justification.** De petits changements réduisent l'incertitude, facilitent la validation et permettent de corriger une direction avant que ses effets ne s'étendent.
-
-### Documentation is part of the product
-
-**Principe.** La documentation appartient pleinement au produit et mérite la même exigence de clarté, d'exactitude et de continuité.
-
-**Justification.** Un produit ne peut rester compréhensible, transmissible et durable si sa connaissance dépend uniquement de la mémoire de ses contributeurs.
-
-### Architecture evolves intentionally
-
-**Principe.** L'architecture doit évoluer par des choix explicites, justifiés et compatibles avec l'identité du produit.
-
-**Justification.** Les changements implicites ou accumulés sans intention affaiblissent progressivement la cohérence et rendent les conséquences difficiles à maîtriser.
-
-### Reviews before commits
-
-**Principe.** Toute évolution significative doit être examinée avant d'être considérée comme une référence stable.
-
-**Justification.** La revue permet de détecter les écarts de sens, de qualité ou de périmètre avant qu'ils ne s'inscrivent durablement dans l'historique du produit.
-
-### Human validates product direction
-
-**Principe.** La direction du produit, ses priorités et ses compromis restent soumis à une validation humaine.
-
-**Justification.** La responsabilité du sens, de la valeur et des conséquences d'un choix ne peut être déléguée à un système d'assistance.
-
-### Unknown remains unknown
-
-**Principe.** Une information absente, incertaine ou non vérifiée doit rester explicitement inconnue.
-
-**Justification.** Une fausse certitude compromet la confiance et peut orienter les décisions plus gravement qu'une limite reconnue.
-
-### Simple is preferable to clever
-
-**Principe.** La solution la plus simple qui répond durablement au besoin doit être préférée à une solution ingénieuse mais difficile à comprendre.
-
-**Justification.** La simplicité favorise l'adoption, la vérification, la transmission et l'évolution à long terme.
-
-### Consistency over novelty
-
-**Principe.** La cohérence avec les conventions établies prévaut sur la recherche de nouveauté sans bénéfice démontré.
-
-**Justification.** La prévisibilité réduit l'effort de compréhension et permet au produit d'évoluer sans fragmenter son langage ni ses pratiques.
-
-## Philosophy
-
-## Goals
-
-## Non-goals
-
-# PART II — Process
-
-## Methodology
-
-## Documentation Standard
-
-## Product Reviews
-
-## Architecture Decisions
-
-## Git Workflow
-
-# PART III — Assets
-
-## Templates
-
-## Prompt Library
-
-## Examples
-
-# PART IV — Evolution
-
-## Future Evolution
-
-## Revision History
+| Document | Type | Responsabilité | Niveau d'autorité | Statut | Référence canonique |
+|---|---|---|---|---|---|
+| [`MASTER_SPECIFICATION.md`](MASTER_SPECIFICATION.md) | Constitution | Identité et architecture documentaire du Framework | Constitutionnelle et normative | Active | Document lui-même |
+| [`Semantic_Reference.md`](reference/Semantic_Reference.md) | Reference | Concepts officiels | Canonique pour les concepts | Active | Document lui-même |
+| [`Methodology_Reference.md`](reference/Methodology_Reference.md) | Reference | Méthodologie et gouvernance | Canonique dans son périmètre | Active | Document lui-même |
+| [`Documentation_Reference.md`](reference/Documentation_Reference.md) | Reference | Standards documentaires | Canonique à son activation | Planned | Document lui-même |
+| [`Architecture_Reference.md`](reference/Architecture_Reference.md) | Reference | Architecture du Framework | Canonique à son activation | Planned | Document lui-même |
+| [`Git_Reference.md`](reference/Git_Reference.md) | Reference | Conventions Git | Canonique à son activation | Planned | Document lui-même |
+| [`ADR-001-Documentation-Architecture.md`](decisions/ADR-001-Documentation-Architecture.md) | Decision | Architecture documentaire modulaire | Décisionnelle et historique | Accepted | — |
+| [`ADR-002-Documentation-Authority-Model.md`](decisions/ADR-002-Documentation-Authority-Model.md) | Decision | Modèle d'autorité documentaire | Décisionnelle et historique | Accepted | — |
+| [`30_ROADMAP.md`](30_ROADMAP.md) | Planning | Epics et direction d'évolution | Canonique pour la planification | Active | Document lui-même |
+| [`README.md`](README.md) | Portal | Présentation et orientation générales | Descriptive | Active | `MASTER_SPECIFICATION.md` |
+| [`templates/README.md`](templates/README.md) | Portal | Présentation des Templates | Descriptive | Active | `MASTER_SPECIFICATION.md` |
+| [`examples/README.md`](examples/README.md) | Portal | Présentation des Examples | Descriptive | Active | `MASTER_SPECIFICATION.md` |
+| [`prompts/README.md`](prompts/README.md) | Portal | Présentation des Prompts | Descriptive | Active | `MASTER_SPECIFICATION.md` |
