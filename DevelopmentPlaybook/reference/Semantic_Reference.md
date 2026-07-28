@@ -528,30 +528,6 @@ Il transforme une intention en indications exploitables, réduit les ambiguïté
 
 ## Methodology
 
-### Epic
-
-Status: Planned
-
-Description:
-
-(TODO)
-
-### Feature
-
-Status: Planned
-
-Description:
-
-(TODO)
-
-### Story
-
-Status: Planned
-
-Description:
-
-(TODO)
-
 ### Knowledge
 
 Status: Approved
@@ -807,13 +783,170 @@ Elle réduit l'incertitude en confrontant ce qui est attendu ou tenu pour valabl
 - Implementation
 - Knowledge
 
+## Delivery
+
+### Architecture Decision
+
+Status: Approved
+
+#### Definition
+
+Une architecture decision est un choix explicite et durable qui détermine une structure, une responsabilité, une frontière ou une dépendance significative. Elle conserve le contexte du choix et les conséquences nécessaires à sa compréhension dans le temps.
+
+#### Purpose
+
+Elle rend une orientation structurante compréhensible et réexaminable afin que les évolutions ultérieures restent compatibles avec les raisons qui l'ont fondée.
+
+#### Rules
+
+- Une architecture decision doit porter sur un choix dont les effets dépassent une modification locale ou temporaire.
+- Elle doit rendre explicites le problème traité, le choix retenu et ses conséquences significatives.
+- Son périmètre et son état doivent pouvoir être identifiés.
+- Elle doit conserver les éléments nécessaires pour comprendre pourquoi le choix a été effectué.
+- Elle ne doit pas se réduire à une préférence de réalisation ou à un détail d'exécution.
+- Elle peut orienter une ou plusieurs epics, mais l'existence de l'une n'impose pas celle de l'autre.
+- Elle ne remplace pas les règles durables établies dans les références qui en ont la responsabilité.
+
+#### Examples
+
+- Une organisation choisit de séparer les connaissances normatives des contenus uniquement illustratifs.
+- Une responsabilité durable est attribuée à une partie déterminée d'un système afin d'éviter des interprétations concurrentes.
+- Une direction de dépendance est retenue entre deux ensembles afin de préserver leur autonomie.
+
+#### Related Concepts
+
+- Epic
+
+### Epic
+
+Status: Approved
+
+#### Definition
+
+Une epic est une unité de planification qui décrit un objectif majeur d'évolution dont la réalisation nécessite plusieurs features cohérentes. Elle exprime le résultat d'ensemble recherché sans détailler chaque unité de travail.
+
+#### Purpose
+
+Elle regroupe et oriente des évolutions complémentaires vers un objectif commun suffisamment important pour dépasser la portée d'une seule feature.
+
+#### Rules
+
+- Une epic doit exprimer un objectif majeur et identifiable.
+- Elle doit réunir plusieurs features contribuant au même résultat d'ensemble.
+- Son périmètre doit rester suffisamment cohérent pour permettre une appréciation globale de sa progression et de son achèvement.
+- Elle ne doit pas détailler les tâches ou les moyens de réalisation.
+- Elle doit pouvoir évoluer lorsque les connaissances disponibles modifient la compréhension de l'objectif.
+- Elle ne nécessite une architecture decision que lorsqu'un choix architectural durable doit être formalisé.
+- La relation entre ses features décrit une composition conceptuelle et n'impose aucun workflow particulier.
+
+#### Examples
+
+- Établir un système complet de gouvernance documentaire au moyen de plusieurs capacités complémentaires.
+- Rendre un service durablement accessible en réunissant les évolutions nécessaires à sa consultation, sa compréhension et son usage.
+- Structurer la gestion d'une connaissance partagée à travers plusieurs évolutions coordonnées.
+
+#### Related Concepts
+
+- Architecture Decision
+- Feature
+
+### Feature
+
+Status: Approved
+
+#### Definition
+
+Une feature est une évolution cohérente qui apporte une capacité identifiable et contribue à l'objectif d'une epic. Elle possède une portée suffisamment délimitée pour que son résultat puisse être compris et évalué.
+
+#### Purpose
+
+Elle transforme une partie d'un objectif majeur en une capacité concrète pouvant être examinée indépendamment tout en restant reliée à l'évolution d'ensemble.
+
+#### Rules
+
+- Une feature doit apporter une capacité ou un résultat identifiable.
+- Elle doit contribuer explicitement à une epic.
+- Son périmètre doit être cohérent et suffisamment limité pour permettre une évaluation distincte.
+- Elle ne doit pas être définie par un moyen, un outil ou une technique de réalisation.
+- Elle peut être décomposée en stories lorsque plusieurs unités de travail sont nécessaires.
+- Ses conditions d'achèvement doivent être vérifiables.
+- Sa relation avec les stories décrit leur contribution conceptuelle et n'impose aucune méthode de conduite du travail.
+
+#### Examples
+
+- Définir les règles permettant d'admettre de nouveaux documents dans un système de gouvernance.
+- Fournir une capacité permettant de retrouver une information selon des critères clairement délimités.
+- Établir un mécanisme cohérent de validation pour une famille d'éléments.
+
+#### Related Concepts
+
+- Epic
+- Story
+
+### Story
+
+Status: Approved
+
+#### Definition
+
+Une story est une unité de travail délimitée qui contribue à une feature en produisant un résultat identifiable. Elle décrit ce qui doit être accompli dans un contexte donné sans imposer la manière de le réaliser.
+
+#### Purpose
+
+Elle rend une contribution suffisamment précise pour être comprise, réalisée et évaluée séparément tout en conservant son lien avec la capacité recherchée.
+
+#### Rules
+
+- Une story doit contribuer à une feature identifiable.
+- Elle doit viser un résultat unique et délimité.
+- Elle doit fournir le contexte nécessaire pour comprendre la contribution attendue.
+- Elle ne doit pas prescrire un outil, une technologie ou une méthode particulière sans nécessité propre au résultat.
+- Ses acceptance criteria doivent rendre son achèvement vérifiable.
+- Elle peut porter sur une analyse, une décision, une documentation ou toute autre forme de travail utile à la feature.
+- Elle ne constitue pas une étape obligatoire d'un workflow particulier.
+
+#### Examples
+
+- Examiner une distinction précise afin de déterminer si elle doit devenir une notion officielle.
+- Documenter les conditions permettant d'appliquer une règle dans un périmètre délimité.
+- Vérifier qu'une capacité produit le résultat attendu dans une situation représentative.
+
+#### Related Concepts
+
+- Feature
+- Acceptance Criteria
+
 ### Acceptance Criteria
 
-Status: Planned
+Status: Approved
 
-Description:
+#### Definition
 
-(TODO)
+Les acceptance criteria sont les conditions explicites et vérifiables permettant de déterminer si une story ou une feature peut être considérée comme terminée dans son périmètre déclaré.
+
+#### Purpose
+
+Ils établissent une compréhension commune du résultat attendu et fournissent une base observable pour en apprécier l'achèvement.
+
+#### Rules
+
+- Les acceptance criteria doivent être rattachés à une story ou à une feature identifiable.
+- Chaque condition doit être claire, observable et vérifiable.
+- Ils doivent décrire le résultat nécessaire sans imposer inutilement la manière de l'obtenir.
+- Ils doivent couvrir les conditions indispensables à l'achèvement dans le périmètre déclaré.
+- Ils doivent être établis avant que l'achèvement soit évalué, sauf lorsqu'une connaissance nouvelle exige leur révision explicite.
+- Leur satisfaction ne démontre pas automatiquement l'atteinte de l'objectif plus large d'une epic.
+- Ils permettent une évaluation sans imposer un processus ou un workflow particulier.
+
+#### Examples
+
+- Le résultat attendu est présent et peut être consulté par le public auquel il est destiné.
+- Chaque information obligatoire est renseignée ou explicitement signalée comme inconnue.
+- Les limites déclarées sont respectées et les cas exclus ne sont pas présentés comme couverts.
+
+#### Related Concepts
+
+- Story
 
 ## Architecture
 
