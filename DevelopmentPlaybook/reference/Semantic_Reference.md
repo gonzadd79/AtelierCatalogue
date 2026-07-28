@@ -2,6 +2,136 @@
 
 Ce document organise les concepts employés par DevelopmentPlaybook. Il constitue leur référence officielle et accueille chaque concept sous une entrée autonome.
 
+## Metamodel
+
+### Concept
+
+Status: Approved
+
+#### Definition
+
+Un concept est une unité de sens distincte et durable qui représente une seule idée. Son identité réside dans sa signification, indépendamment du nom qui le désigne, de l'entrée documentaire qui le décrit ou de la représentation qui le rend visible.
+
+#### Purpose
+
+Il fournit une signification commune et stable qui peut être comprise, utilisée et reliée à d'autres significations sans dépendre d'une formulation ou d'un format particulier.
+
+#### Rules
+
+- Un concept doit représenter une seule idée identifiable.
+- Son nom le désigne mais ne constitue pas sa signification.
+- Son entrée documentaire le décrit mais ne se confond pas avec lui.
+- Sa représentation peut évoluer sans modifier son identité tant que sa signification demeure inchangée.
+- Une même signification ne doit pas être introduite sous plusieurs noms comme des concepts distincts.
+- Sa définition doit permettre de le comprendre indépendamment de ses relations avec d'autres concepts.
+
+#### Examples
+
+- Une même notion conserve son identité lorsqu'elle est désignée par un autre nom sans changement de sens.
+- Une notion présentée successivement dans un paragraphe, un tableau ou un schéma reste le même concept.
+- Deux entrées portant des noms différents mais exprimant exactement la même idée représentent un seul concept.
+
+#### Related Concepts
+
+- Definition
+- Semantic Relation
+- Semantic Domain
+
+### Definition
+
+Status: Approved
+
+#### Definition
+
+Une définition est un énoncé autonome qui établit la signification essentielle d'un concept et permet de le distinguer des autres. Elle est indépendante de sa représentation documentaire ; la section intitulée `Definition` est uniquement le conteneur qui l'accueille dans une entrée.
+
+#### Purpose
+
+Elle fournit une compréhension précise, stable et partagée du concept afin que son usage ne dépende ni du contexte immédiat ni d'une interprétation implicite.
+
+#### Rules
+
+- Une définition doit porter sur un seul concept.
+- Elle doit exprimer sa signification essentielle de manière claire et non ambiguë.
+- Elle doit permettre de distinguer le concept des notions avec lesquelles il pourrait être confondu.
+- Elle doit pouvoir être comprise sans dépendre des exemples ou des relations associés au concept.
+- Elle ne doit pas être confondue avec son titre, sa mise en forme ou la section documentaire qui la contient.
+- Une modification de représentation ne constitue pas une modification de la définition tant que le sens demeure inchangé.
+
+#### Examples
+
+- Un même énoncé conserve sa fonction de définition lorsqu'il est présenté dans une page, une fiche ou un tableau.
+- Le déplacement d'une définition vers un autre conteneur documentaire ne modifie pas le concept qu'elle définit.
+- Une illustration peut faciliter la compréhension d'une définition sans en faire partie.
+
+#### Related Concepts
+
+- Concept
+
+### Semantic Relation
+
+Status: Approved
+
+#### Definition
+
+Une relation sémantique est un lien explicite de sens entre deux concepts. Elle signale que leur compréhension peut être rapprochée sans définir l'un par l'autre.
+
+#### Purpose
+
+Elle rend visibles les rapprochements utiles entre les concepts et facilite la navigation dans le modèle sans compromettre leur autonomie.
+
+#### Rules
+
+- Une relation sémantique doit relier des concepts existants et distincts.
+- Elle doit exprimer un lien de sens pertinent pour leur compréhension.
+- Elle doit compléter les définitions sans s'y substituer.
+- Elle ne doit pas être nécessaire pour comprendre la signification essentielle de l'un des concepts reliés.
+- Elle n'implique par elle-même ni équivalence, ni dépendance, ni hiérarchie, ni autorité.
+- Elle peut être représentée par une liste de Related Concepts sans se confondre avec cette représentation.
+- Aucun type de relation ne doit être introduit sans besoin distinct et durable.
+
+#### Examples
+
+- Deux concepts peuvent être reliés parce que leur distinction évite une confusion fréquente.
+- Un concept peut être relié à un autre qui complète sa compréhension sans participer à sa définition.
+- Le même lien de sens peut être présenté dans une liste ou un schéma sans changer de nature.
+
+#### Related Concepts
+
+- Concept
+
+### Semantic Domain
+
+Status: Approved
+
+#### Definition
+
+Un domaine sémantique est un ensemble cohérent de concepts réunis autour d'un sujet commun afin de faciliter leur organisation et leur gouvernance. Il ne possède aucune autorité propre ; l'autorité des définitions demeure celle du Semantic Reference.
+
+#### Purpose
+
+Il permet d'examiner, de maintenir et de faire évoluer ensemble des concepts qui participent à une même compréhension générale, sans réduire leur autonomie individuelle.
+
+#### Rules
+
+- Un domaine sémantique doit regrouper des concepts présentant une cohérence de sujet identifiable.
+- Il doit faciliter leur organisation et leur gouvernance sans modifier leur signification.
+- Il ne doit posséder aucune autorité distincte de celle de la référence qui contient les concepts.
+- Il existe indépendamment de sa représentation ; une catégorie Markdown peut le rendre visible mais ne le constitue pas.
+- Il ne doit pas être confondu avec un Scope, qui délimite ce qui est inclus ou exclu d'une initiative.
+- Il ne doit pas être confondu avec une Reference, qui est un artefact documentaire doté d'un rôle déclaré.
+- L'appartenance à un domaine ne doit pas remplacer la définition autonome d'un concept.
+
+#### Examples
+
+- Un domaine peut réunir des concepts décrivant la direction et les limites d'une initiative.
+- Un domaine peut regrouper les notions nécessaires pour décrire des artefacts documentaires.
+- Un même domaine reste inchangé lorsqu'il est représenté par une section, un index ou une autre organisation documentaire.
+
+#### Related Concepts
+
+- Concept
+
 ## Product
 
 ### Vision
