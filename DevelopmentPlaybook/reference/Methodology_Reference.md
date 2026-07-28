@@ -41,6 +41,45 @@ Ces changements ne sont pas décidés progressivement au fil des Features. Ils s
 - Chaque domaine fait l'objet d'une Domain Review afin de vérifier la cohérence de l'ensemble de ses concepts.
 - Une Architecture Review peut être réalisée avant l'ouverture d'un nouveau domaine lorsque sa structure ou son niveau d'abstraction nécessite une validation préalable.
 
+# Semantic Quality Standard
+
+Tout concept admis dans le Semantic Reference doit respecter l'ensemble des principes suivants.
+
+## Atomicité
+
+Un concept représente une seule idée. Il ne doit pas réunir plusieurs notions pouvant être définies et utilisées indépendamment.
+
+## Unicité
+
+Chaque concept ne possède qu'une seule entrée dans le Semantic Reference. Les synonymes sont évités lorsqu'ils créent plusieurs représentations d'une même notion.
+
+## Autorité
+
+Toute définition normative d'un concept appartient exclusivement au Semantic Reference. Les autres documents peuvent utiliser le concept et renvoyer vers sa définition canonique, mais ne doivent ni le redéfinir ni lui attribuer une signification concurrente.
+
+## Indépendance
+
+La définition d'un concept doit être compréhensible par elle-même. Les relations avec d'autres concepts peuvent compléter cette compréhension, mais ne doivent pas être nécessaires pour établir sa signification fondamentale.
+
+## Stabilité
+
+Une définition ne doit évoluer que lorsqu'une évolution conceptuelle est nécessaire. Une préférence stylistique ou une reformulation sans changement de sens ne suffit pas à justifier sa modification.
+
+## Relations
+
+Les Related Concepts servent uniquement à établir des liens sémantiques pertinents. Ils complètent la navigation et la compréhension du référentiel, mais ne constituent jamais une définition.
+
+## Admission
+
+Avant d'ajouter un concept, il faut vérifier :
+
+- qu'il n'existe pas déjà dans le Semantic Reference ;
+- qu'il représente une notion autonome ;
+- qu'il possède une utilité durable ;
+- qu'il n'est pas spécifique à un outil.
+
+Un concept qui ne satisfait pas l'ensemble de ces critères ne doit pas être admis.
+
 # Knowledge Evolution
 
 La connaissance mûrit selon le cycle général suivant :
