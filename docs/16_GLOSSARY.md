@@ -7,8 +7,8 @@
 - **Modèle** : conception ou produit commun à plusieurs exemplaires.
 - **Variante** : version d'un modèle présentant une différence pertinente.
 - **Référence** : identifiant porté ou publié par un fabricant/vendeur, conservé sans invention.
-- **Quantité** : mesure connue ou inconnue du stock dans une unité déclarée.
-- **Disponibilité** : part mobilisable d'une quantité, distincte du total.
+- **Quantité** : mesure du stock dans une unité déclarée ; une valeur inconnue est absente ou `null`, jamais portée par un indicateur parallèle.
+- **Disponibilité** : part mobilisable calculée depuis les quantités totale, réservée, utilisée et hors service ; elle n'est pas persistée.
 - **Réservation** : affectation prévue qui réduit la disponibilité sans nécessairement constituer un usage.
 - **Emplacement** : nœud hiérarchique décrivant où se trouve physiquement un objet.
 - **Catégorie** : classement principal administré ; elle ne définit pas toute l'identité.
@@ -16,8 +16,8 @@
 - **Spécification** : caractéristique structurée avec valeur, unité, conditions, statut et sources possibles.
 - **Observation** : information directement perceptible sur l'objet ou une photo, sans interprétation ajoutée.
 - **Annotation utilisateur** : texte ou déclaration fourni par l'utilisateur, conservé comme tel.
-- **Identification** : rapprochement raisonné entre l'objet observé et un modèle/référence.
-- **Confiance** : qualification prudente de la solidité d'une affirmation, non probabilité scientifique.
+- **Identification** : rapprochement raisonné entre l'objet observé et un modèle/référence, représenté uniquement par `InventoryItem.identification`.
+- **Confiance** : qualification faible, moyenne ou élevée de la solidité d'une identification, distincte de son statut et non assimilable à une probabilité scientifique.
 - **Source** : origine traçable soutenant ou contextualisant une information.
 - **Média** : actif principalement visuel.
 - **Photo réelle** : photographie montrant l'exemplaire ou lot effectivement possédé.
@@ -25,7 +25,7 @@
 - **Annexe** : fichier associé conservé pour consultation ou réutilisation.
 - **Document** : annexe documentaire telle qu'une datasheet, notice, facture ou note.
 - **Projet** : contexte technique reliant objets, usages, médias, documents et notes.
-- **Usage projet** : relation indiquant le rôle et la quantité d'un article dans un projet.
+- **Usage projet** : relation possédée par `Project.itemUsages`, indiquant le rôle et la quantité d'un article dans un projet ; la navigation inverse est dérivée.
 - **Intake** : zone d'entrée non publiée pour originaux à traiter.
 - **Brouillon** : proposition modifiable non encore publiée comme donnée réelle.
 - **Publication** : passage validé d'un brouillon vers les données et actifs consultables du catalogue.

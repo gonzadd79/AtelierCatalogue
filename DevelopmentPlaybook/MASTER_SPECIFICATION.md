@@ -107,5 +107,8 @@ Le registre identifie les documents officiels et leur autorité. La présence d'
 | [`30_ROADMAP.md`](30_ROADMAP.md) | Planning | Epics et direction d'évolution | Canonique pour la planification | Active | Document lui-même |
 | [`README.md`](README.md) | Portal | Présentation et orientation générales | Descriptive | Active | `MASTER_SPECIFICATION.md` |
 | [`templates/README.md`](templates/README.md) | Portal | Présentation des Templates | Descriptive | Active | `MASTER_SPECIFICATION.md` |
+| [`Release_Specification.md`](templates/Release_Specification.md) | Derived Asset | Structurer la définition d'une Release | Non normative | Active | [`Methodology_Reference.md#required-artifacts`](reference/Methodology_Reference.md#required-artifacts) |
+| [`Certification_Report.md`](templates/Certification_Report.md) | Derived Asset | Structurer la Decision de Certification | Non normative | Active | [`Methodology_Reference.md#required-artifacts`](reference/Methodology_Reference.md#required-artifacts) |
+| [`Publication_Record.md`](templates/Publication_Record.md) | Derived Asset | Structurer les faits de Publication | Non normative | Active | [`Methodology_Reference.md#required-artifacts`](reference/Methodology_Reference.md#required-artifacts) |
 | [`examples/README.md`](examples/README.md) | Portal | Présentation des Examples | Descriptive | Active | `MASTER_SPECIFICATION.md` |
 | [`prompts/README.md`](prompts/README.md) | Portal | Présentation des Prompts | Descriptive | Active | `MASTER_SPECIFICATION.md` |

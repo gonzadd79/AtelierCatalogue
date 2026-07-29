@@ -1,5 +1,7 @@
 # Vision produit
 
+> **Autorité documentaire : Vision canonique.** Ce document est la source officielle de la mission, du public, des objectifs, des principes fondateurs et des non-objectifs d'AtelierCatalog. [`../00_VISION.md`](../00_VISION.md) fournit uniquement un contexte narratif. Le [Scope](../02_SCOPE.md), la [Roadmap](../14_ROADMAP.md) et les [Architecture Decisions](../15_DECISIONS.md) appliquent cette Vision sans la redéfinir.
+
 ## Mission
 
 AtelierCatalog est la mémoire technique personnelle de l'atelier. Sa mission est d'aider l'utilisateur à savoir ce qu'il possède, où cela se trouve, ce qui est utilisable et quelles informations restent à vérifier, sans lui donner l'impression de consulter une base de données.

@@ -12,4 +12,6 @@ Il s'adresse aux personnes et aux équipes qui souhaitent structurer, documenter
 
 ## Fonctionnement général
 
-`MASTER_SPECIFICATION.md` constitue la source de vérité du projet. Les futurs documents, modèles, exemples et prompts seront organisés dans leurs dossiers respectifs à mesure que leur contenu sera défini et validé.
+[`MASTER_SPECIFICATION.md`](MASTER_SPECIFICATION.md) est la Constitution, le registre d'autorité documentaire et le point d'entrée du Framework. L'autorité est ensuite répartie par périmètre : le [`Semantic Reference`](reference/Semantic_Reference.md) définit les concepts officiels, le [`Methodology Reference`](reference/Methodology_Reference.md) définit la méthodologie et la [`Roadmap`](30_ROADMAP.md) porte uniquement la planification.
+
+Les actifs réutilisables disponibles sont présentés dans leurs portails respectifs. Les [templates de Release Management](templates/README.md) sont des actifs dérivés non normatifs ; les Examples et Prompts restent des capacités planifiées.

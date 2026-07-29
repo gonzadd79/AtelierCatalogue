@@ -1,5 +1,9 @@
 # Identification et sources
 
+## Représentation canonique
+
+La représentation canonique est `InventoryItem.identification`, définie par le [modèle de données](04_DATA_MODEL.md#identificationassessment). Son `status` porte l'état de l'identification, sa `confidence` en qualifie la solidité et les informations éventuelles de validation en assurent la traçabilité. Aucun de ces éléments n'existe en parallèle au premier niveau de l'article.
+
 ## Processus explicable
 
 1. conserver les vues et retranscrire les marquages sans correction silencieuse ;
@@ -23,7 +27,6 @@ Les maximums absolus ne sont pas des valeurs d'usage recommandées. Courant cont
 
 - **faible** : indices incomplets ou source fragile ;
 - **moyenne** : plusieurs indices cohérents mais ambiguïté restante ;
-- **élevée** : correspondance forte entre objet et sources fiables ;
-- **confirmée manuellement** : une personne a contrôlé les éléments définis par le protocole.
+- **élevée** : correspondance forte entre objet et sources fiables.
 
-Ces niveaux ordonnent le besoin de prudence ; ce ne sont pas des probabilités scientifiques. La confirmation humaine précise par qui, quand et sur quels éléments. Toute décision doit pouvoir être retracée jusqu'aux observations et sources qui la soutiennent.
+Ces niveaux ordonnent le besoin de prudence ; ce ne sont pas des probabilités scientifiques. Une confirmation est portée par le statut `confirmed`, jamais par le niveau de confiance. Lorsqu'elle est documentée, sa validation précise par qui et quand elle a été réalisée. Toute décision doit pouvoir être retracée jusqu'aux observations et sources qui la soutiennent.

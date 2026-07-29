@@ -8,7 +8,7 @@ Le modèle sépare identité métier, représentation V1 et affichage. Un champ 
 
 Un `InventoryItem` représente un objet ou un ensemble d'objets considérés identiques pour l'inventaire, pas nécessairement chaque exemplaire sérialisé.
 
-Champs prévus : `id`, `slug`, `name`, `reference`, `manufacturer`, `variant`, `categoryId`, `subcategoryId`, `description`, `quantity`, `stockUnit`, `locationIds`, `condition`, `inventoryStatus`, `identificationStatus`, `confidence`, `tags`, `specifications`, `media`, `documents`, `sources`, `equivalentItemIds`, `compatibleItemIds`, `projectIds`, `notes`, `createdAt`, `updatedAt`. Seuls `id` et `name` sont fondamentaux dans le schéma initial. Référence et fabricant restent absents si non vérifiés. Équivalence et compatibilité sont des affirmations distinctes et sourçables.
+Champs prévus : `id`, `slug`, `name`, `reference`, `manufacturer`, `variant`, `categoryId`, `subcategoryId`, `description`, `quantity`, `stockUnit`, `locationIds`, `condition`, `inventoryStatus`, `identification`, `tags`, `specifications`, `media`, `documents`, `sources`, `equivalentItemIds`, `compatibleItemIds`, `notes`, `createdAt`, `updatedAt`. Seuls `id` et `name` sont fondamentaux dans le schéma initial. Référence et fabricant restent absents si non vérifiés. Équivalence et compatibilité sont des affirmations distinctes et sourçables.
 
 ## Specification
 
@@ -30,11 +30,25 @@ Champs : `id`, `type`, `title`, `publisher`, `url`, `localDocumentId`, `retrieve
 
 ## IdentificationAssessment
 
-Champs : `status`, `confidence`, `proposedNames`, `observedMarkings`, `userAnnotations`, `ambiguities`, `validatedBy`, `validatedAt`, plus extensions futures. Les statuts canoniques sont non analysée (`unreviewed`), proposée, à confirmer, confirmée, ambiguë et non identifiée. Les marquages observés ne sont pas corrigés silencieusement ; les propositions restent séparées.
+`InventoryItem.identification` est l'unique représentation canonique de l'identification. Elle contient `status`, `confidence` et, lorsqu'une validation existe, `validatedBy` et `validatedAt`. Les statuts canoniques sont non analysée (`unreviewed`), proposée (`proposed`), à confirmer (`to-confirm`), confirmée (`confirmed`), ambiguë (`ambiguous`) et non identifiée (`unidentified`). Les niveaux de confiance sont faible (`low`), moyen (`medium`) et élevé (`high`).
+
+La confirmation appartient à `status` ; elle ne constitue pas un niveau de confiance. Une validation éventuelle trace la confirmation sans créer une seconde représentation de l'identification. Les marquages observés ne sont pas corrigés silencieusement et les propositions restent séparées. Le processus est détaillé dans [Identification et sources](07_IDENTIFICATION_AND_SOURCES.md).
 
 ## Quantity et répartition
 
-`quantity` peut porter total, disponible, réservé, utilisé, hors service et `unknown`. Les quantités par emplacement nécessiteront une structure d'allocation dédiée ; `locationIds` exprime déjà la relation multiple mais ne prétend pas ventiler le stock à la fondation. `stockUnit` distingue pièce, lot, mètre ou autre unité sans catalogue fermé prématurément.
+`quantity` persiste uniquement `total`, `reserved`, `used` et `outOfService`. La valeur `available` est dérivée par `total - reserved - used - outOfService` lorsque toutes les composantes sont connues. Une quantité inconnue est omise ou vaut `null` ; aucun indicateur parallèle n'est persisté. `stockUnit` porte l'unité commune à ces valeurs.
+
+Les invariants sont les suivants :
+
+- toute valeur connue est supérieure ou égale à zéro ;
+- zéro désigne une valeur connue, jamais une absence de connaissance ;
+- toutes les valeurs d'un même état de quantité utilisent `stockUnit` ;
+- lorsque les composantes sont connues, `reserved + used + outOfService` ne dépasse pas `total` ;
+- `available` est comprise entre zéro et `total` lorsqu'elle est calculable ;
+- si une composante nécessaire au calcul est inconnue, `available` reste inconnue ;
+- une valeur dérivée ne devient jamais une autorité persistée.
+
+Les quantités par emplacement nécessiteront une structure d'allocation dédiée ; `locationIds` exprime déjà la relation multiple mais ne prétend pas ventiler le stock à la fondation. Les responsabilités de consultation sont détaillées dans [Stock et emplacements](11_STOCK_AND_LOCATIONS.md).
 
 ## Location
 
@@ -42,7 +56,7 @@ Un emplacement contient `id`, `name`, `parentId`, `type`, `description`, `pathLa
 
 ## Project et ProjectItemUsage
 
-Un projet contient identité, description, statut, médias, documents, notes et `itemUsages`. Chaque usage relie `itemId`, `quantity`, `role`, `isMissing` et `alternativeItemIds`. Les relations doivent être vérifiables dans les deux sens ; une future génération peut dériver `projectIds` pour éviter les divergences.
+Un projet contient identité, description, statut, médias, documents, notes et `itemUsages`. Chaque usage relie `itemId`, `quantity`, `role`, `isMissing` et `alternativeItemIds`. `Project.itemUsages` est l'unique source de vérité de la relation Projet ↔ Article. La navigation depuis un `InventoryItem` est une projection calculée à partir des usages et ne constitue pas un état possédé par l'article. Les responsabilités du projet sont détaillées dans [Projets](10_PROJECTS.md).
 
 ## Dates, versions et extension
 

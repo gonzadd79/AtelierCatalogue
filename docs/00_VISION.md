@@ -1,4 +1,6 @@
-# Vision
+# Vision — contexte narratif
+
+> **Statut documentaire : support descriptif.** La Vision canonique du produit est [`product/30_PRODUCT_VISION.md`](product/30_PRODUCT_VISION.md). Le présent document développe le problème, la proposition de valeur et l'expérience recherchée sans créer une seconde autorité. En cas de divergence, la Vision canonique prévaut. Le périmètre de la V1 appartient exclusivement à [`02_SCOPE.md`](02_SCOPE.md).
 
 ## Le problème réel
 

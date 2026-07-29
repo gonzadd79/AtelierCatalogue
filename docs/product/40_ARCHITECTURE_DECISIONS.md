@@ -1,7 +1,7 @@
 # Décisions d'architecture
 
-Ce document accueillera les décisions importantes qui structurent durablement AtelierCatalog. Chaque décision sera consignée sous la forme d'un ADR afin d'expliciter son contexte, les options considérées, le choix retenu et ses conséquences.
+> **Statut documentaire : portail descriptif.** Le registre canonique des Architecture Decisions est [`../15_DECISIONS.md`](../15_DECISIONS.md).
 
-## Décisions
+Ce document ne contient et ne duplique aucune décision. Toute nouvelle décision, modification de statut ou conséquence architecturale doit être enregistrée dans le registre canonique.
 
-Aucune décision n'est enregistrée à ce stade.
+En cas de divergence avec un autre document, une ADR acceptée du registre canonique prévaut dans son périmètre.

@@ -1,10 +1,12 @@
-# Epic 2 — Inventaire
+# Inventaire — cadrage produit
 
-## Pourquoi cette Epic existe
+> **Statut documentaire : support de cadrage.** Ce document décrit les problèmes, objectifs et critères propres à l'Inventaire. Il ne possède aucune autorité de planification et ne crée aucune Epic ni Feature. Les identifiants, les noms et les statuts des Epics appartiennent exclusivement à la [Roadmap canonique](../14_ROADMAP.md).
 
-La Foundation a établi un catalogue local, portable et consultable. L'Epic 2 prépare l'étape suivante : faire de ce catalogue une représentation utile et durable de l'atelier, sans perdre la simplicité, la transparence ni la maîtrise des données acquises jusqu'ici.
+## Pourquoi ce cadrage existe
 
-Cette Epic existe pour cadrer les futurs besoins liés à l'inventaire avant de définir leur mise en œuvre. Elle ne présume ni des écrans, ni des formats, ni des solutions techniques qui seront retenus dans les Features à venir.
+La Foundation a établi un catalogue local, portable et consultable. Ce cadrage prépare l'étape suivante : faire de ce catalogue une représentation utile et durable de l'atelier, sans perdre la simplicité, la transparence ni la maîtrise des données acquises jusqu'ici.
+
+Ce document existe pour cadrer les futurs besoins liés à l'inventaire avant de définir leur mise en œuvre. Il ne présume ni des écrans, ni des formats, ni des solutions techniques qui seront retenus dans les Features à venir.
 
 ## Problèmes utilisateur à résoudre
 
@@ -34,6 +36,6 @@ Cette Epic existe pour cadrer les futurs besoins liés à l'inventaire avant de 
 - Le dossier complet demeure consultable par ouverture directe, sans serveur ni connexion Internet.
 - Chaque future Feature possède un objectif utilisateur, un périmètre limité et des vérifications explicites.
 
-## Features
+## Relation avec les Features
 
-Aucune Feature n'est encore enregistrée. Cette liste sera complétée progressivement après validation de chaque besoin produit.
+Aucune Feature n'est enregistrée dans ce document. Les Features et leur rattachement aux Epics sont définis uniquement par la [Roadmap canonique](../14_ROADMAP.md).

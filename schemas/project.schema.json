@@ -9,12 +9,12 @@
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "name": { "type": "string", "minLength": 1 },
-    "slug": { "type": ["string", "null"] },
+    "slug": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "description": { "type": ["string", "null"] },
     "status": { "type": ["string", "null"] },
-    "itemUsages": { "type": "array", "items": { "type": "object", "required": ["itemId"], "additionalProperties": true, "properties": { "itemId": { "type": "string" }, "quantity": { "type": ["number", "null"], "minimum": 0 }, "role": { "type": ["string", "null"] }, "isMissing": { "type": "boolean" }, "alternativeItemIds": { "type": "array", "items": { "type": "string" } } } } },
-    "media": { "type": "array", "items": { "type": "object" } },
-    "documents": { "type": "array", "items": { "type": "object" } },
+    "itemUsages": { "type": "array", "items": { "type": "object", "required": ["itemId"], "additionalProperties": true, "properties": { "itemId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "quantity": { "type": ["number", "null"], "minimum": 0 }, "role": { "type": ["string", "null"] }, "isMissing": { "type": "boolean" }, "alternativeItemIds": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } } } } },
+    "media": { "type": "array", "items": { "$ref": "inventory-item.schema.json#/$defs/media" } },
+    "documents": { "type": "array", "items": { "$ref": "inventory-item.schema.json#/$defs/document" } },
     "notes": { "type": ["string", "null"] },
     "createdAt": { "type": ["string", "null"], "format": "date-time" },
     "updatedAt": { "type": ["string", "null"], "format": "date-time" }

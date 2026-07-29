@@ -6,6 +6,37 @@
   "type": "object",
   "required": ["id", "name"],
   "additionalProperties": true,
+  "allOf": [
+    {
+      "not": {
+        "anyOf": [
+          { "required": ["identificationStatus"] },
+          { "required": ["confidence"] },
+          { "required": ["projectIds"] }
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": ["quantity"],
+        "properties": {
+          "quantity": {
+            "type": "object",
+            "anyOf": [
+              { "required": ["total"], "properties": { "total": { "type": "number" } } },
+              { "required": ["reserved"], "properties": { "reserved": { "type": "number" } } },
+              { "required": ["used"], "properties": { "used": { "type": "number" } } },
+              { "required": ["outOfService"], "properties": { "outOfService": { "type": "number" } } }
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": ["stockUnit"],
+        "properties": { "stockUnit": { "type": "string", "minLength": 1 } }
+      }
+    }
+  ],
   "properties": {
     "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "description": "Identifiant stable, portable et unique." },
     "slug": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
@@ -13,54 +44,51 @@
     "reference": { "type": ["string", "null"] },
     "manufacturer": { "type": ["string", "null"] },
     "variant": { "type": ["string", "null"] },
-    "categoryId": { "type": ["string", "null"] },
-    "subcategoryId": { "type": ["string", "null"] },
+    "categoryId": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "subcategoryId": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "description": { "type": ["string", "null"] },
     "quantity": { "$ref": "#/$defs/quantity" },
     "stockUnit": { "type": ["string", "null"] },
-    "locationIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "locationIds": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "uniqueItems": true },
     "condition": { "type": ["string", "null"] },
     "inventoryStatus": { "type": ["string", "null"] },
-    "identificationStatus": { "enum": ["unreviewed", "proposed", "to-confirm", "confirmed", "ambiguous", "unidentified", null] },
-    "confidence": { "enum": ["low", "medium", "high", "manually-confirmed", null] },
     "tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
     "specifications": { "type": "array", "items": { "$ref": "#/$defs/specification" } },
     "media": { "type": "array", "items": { "$ref": "#/$defs/media" } },
     "documents": { "type": "array", "items": { "$ref": "#/$defs/document" } },
     "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
     "identification": { "$ref": "#/$defs/identification" },
-    "equivalentItemIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-    "compatibleItemIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-    "projectIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "equivalentItemIds": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "uniqueItems": true },
+    "compatibleItemIds": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "uniqueItems": true },
     "notes": { "type": ["string", "null"], "description": "Texte non fiable à afficher échappé, jamais comme HTML." },
     "createdAt": { "type": ["string", "null"], "format": "date-time" },
     "updatedAt": { "type": ["string", "null"], "format": "date-time" }
   },
   "$defs": {
     "quantity": {
-      "description": "État de stock synthétique ; unknown explicite évite de transformer l'absence en zéro.",
-      "type": ["object", "null"], "additionalProperties": true,
-      "properties": { "total": { "type": ["number", "null"], "minimum": 0 }, "available": { "type": ["number", "null"], "minimum": 0 }, "reserved": { "type": ["number", "null"], "minimum": 0 }, "used": { "type": ["number", "null"], "minimum": 0 }, "outOfService": { "type": ["number", "null"], "minimum": 0 }, "unknown": { "type": "boolean" } }
+      "description": "État de stock persistant. Une valeur inconnue est omise ou nulle ; la disponibilité est dérivée par l'application.",
+      "type": ["object", "null"], "additionalProperties": false,
+      "properties": { "total": { "type": ["number", "null"], "minimum": 0 }, "reserved": { "type": ["number", "null"], "minimum": 0 }, "used": { "type": ["number", "null"], "minimum": 0 }, "outOfService": { "type": ["number", "null"], "minimum": 0 } }
     },
     "specification": {
       "type": "object", "required": ["key", "label"], "additionalProperties": true,
-      "properties": { "key": { "type": "string" }, "label": { "type": "string" }, "value": {}, "numericValue": { "type": ["number", "null"] }, "unit": { "type": ["string", "null"] }, "minimum": { "type": ["number", "null"] }, "maximum": { "type": ["number", "null"] }, "typical": { "type": ["number", "null"] }, "conditions": { "type": ["string", "null"] }, "status": { "type": ["string", "null"] }, "confidence": { "type": ["string", "null"] }, "sourceIds": { "type": "array", "items": { "type": "string" } }, "notes": { "type": ["string", "null"] } }
+      "properties": { "key": { "type": "string" }, "label": { "type": "string" }, "value": {}, "numericValue": { "type": ["number", "null"] }, "unit": { "type": ["string", "null"] }, "minimum": { "type": ["number", "null"] }, "maximum": { "type": ["number", "null"] }, "typical": { "type": ["number", "null"] }, "conditions": { "type": ["string", "null"] }, "status": { "type": ["string", "null"] }, "confidence": { "type": ["string", "null"] }, "sourceIds": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } }, "notes": { "type": ["string", "null"] } }
     },
     "media": {
       "type": "object", "required": ["id", "type", "role", "path", "showsOwnedItem"], "additionalProperties": true,
-      "properties": { "id": { "type": "string" }, "type": { "type": "string" }, "role": { "type": "string" }, "path": { "type": "string", "pattern": "^(?![A-Za-z]:|/|\\\\)" }, "thumbnailPath": { "type": ["string", "null"] }, "caption": { "type": ["string", "null"] }, "origin": { "type": ["string", "null"] }, "sourceId": { "type": ["string", "null"] }, "isPrimary": { "type": "boolean" }, "showsOwnedItem": { "type": "boolean" }, "createdAt": { "type": ["string", "null"] }, "rights": { "type": ["string", "null"] }, "notes": { "type": ["string", "null"] } }
+      "properties": { "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "type": { "type": "string" }, "role": { "type": "string" }, "path": { "type": "string", "minLength": 1, "pattern": "^(?![A-Za-z]:)(?!/)(?![A-Za-z][A-Za-z0-9+.-]*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$" }, "thumbnailPath": { "type": ["string", "null"], "minLength": 1, "pattern": "^(?![A-Za-z]:)(?!/)(?![A-Za-z][A-Za-z0-9+.-]*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$" }, "caption": { "type": ["string", "null"] }, "origin": { "type": ["string", "null"] }, "sourceId": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "isPrimary": { "type": "boolean" }, "showsOwnedItem": { "type": "boolean" }, "createdAt": { "type": ["string", "null"], "format": "date-time" }, "rights": { "type": ["string", "null"] }, "notes": { "type": ["string", "null"] } }
     },
     "document": {
       "type": "object", "required": ["id", "type", "title"], "additionalProperties": true,
-      "properties": { "id": { "type": "string" }, "type": { "type": "string" }, "title": { "type": "string" }, "path": { "type": ["string", "null"] }, "externalUrl": { "type": ["string", "null"], "format": "uri" }, "sourceId": { "type": ["string", "null"] }, "language": { "type": ["string", "null"] }, "version": { "type": ["string", "null"] }, "isAvailableOffline": { "type": "boolean" }, "rights": { "type": ["string", "null"] }, "notes": { "type": ["string", "null"] } }
+      "properties": { "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "type": { "type": "string" }, "title": { "type": "string" }, "path": { "type": ["string", "null"], "minLength": 1, "pattern": "^(?![A-Za-z]:)(?!/)(?![A-Za-z][A-Za-z0-9+.-]*:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$" }, "externalUrl": { "type": ["string", "null"], "format": "uri" }, "sourceId": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "language": { "type": ["string", "null"] }, "version": { "type": ["string", "null"] }, "isAvailableOffline": { "type": "boolean" }, "rights": { "type": ["string", "null"] }, "notes": { "type": ["string", "null"] } }
     },
     "source": {
       "type": "object", "required": ["id", "type", "title"], "additionalProperties": true,
-      "properties": { "id": { "type": "string" }, "type": { "type": "string" }, "title": { "type": "string" }, "publisher": { "type": ["string", "null"] }, "url": { "type": ["string", "null"], "format": "uri" }, "localDocumentId": { "type": ["string", "null"] }, "retrievedAt": { "type": ["string", "null"] }, "reliability": { "type": ["string", "null"] }, "notes": { "type": ["string", "null"] } }
+      "properties": { "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "type": { "type": "string" }, "title": { "type": "string" }, "publisher": { "type": ["string", "null"] }, "url": { "type": ["string", "null"], "format": "uri" }, "localDocumentId": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }, "retrievedAt": { "type": ["string", "null"], "format": "date-time" }, "reliability": { "type": ["string", "null"] }, "notes": { "type": ["string", "null"] } }
     },
     "identification": {
-      "type": ["object", "null"], "additionalProperties": true,
-      "properties": { "status": { "type": ["string", "null"] }, "confidence": { "type": ["string", "null"] }, "proposedNames": { "type": "array", "items": { "type": "string" } }, "observedMarkings": { "type": "array", "items": { "type": "string" } }, "userAnnotations": { "type": "array", "items": { "type": "string" } }, "ambiguities": { "type": "array", "items": { "type": "string" } }, "validatedBy": { "type": ["string", "null"] }, "validatedAt": { "type": ["string", "null"] } }
+      "type": ["object", "null"], "required": ["status", "confidence"], "additionalProperties": true,
+      "properties": { "status": { "enum": ["unreviewed", "proposed", "to-confirm", "confirmed", "ambiguous", "unidentified", null] }, "confidence": { "enum": ["low", "medium", "high", null] }, "proposedNames": { "type": "array", "items": { "type": "string" } }, "observedMarkings": { "type": "array", "items": { "type": "string" } }, "userAnnotations": { "type": "array", "items": { "type": "string" } }, "ambiguities": { "type": "array", "items": { "type": "string" } }, "validatedBy": { "type": ["string", "null"] }, "validatedAt": { "type": ["string", "null"], "format": "date-time" } }
     }
   }
 }

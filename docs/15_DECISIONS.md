@@ -1,5 +1,7 @@
 # Journal de décisions
 
+> **Autorité documentaire : registre ADR canonique.** Ce document est la source unique des Architecture Decisions acceptées. [`product/40_ARCHITECTURE_DECISIONS.md`](product/40_ARCHITECTURE_DECISIONS.md) est uniquement un portail et ne contient aucune décision concurrente. Les documents d'architecture appliquent ce registre sans le redéfinir.
+
 Statut de toutes les décisions ci-dessous : **acceptée pour la V1**.
 
 ## ADR-001 — Nom AtelierCatalog

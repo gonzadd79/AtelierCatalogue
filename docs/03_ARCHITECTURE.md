@@ -1,5 +1,7 @@
 # Architecture
 
+> **Statut documentaire : spécification spécialisée.** Ce document décrit l'architecture générale dans le cadre du [Scope canonique](02_SCOPE.md). Les décisions acceptées du [registre ADR canonique](15_DECISIONS.md) prévalent sur toute formulation descriptive et toute évolution structurante doit y être enregistrée avant de modifier cette architecture.
+
 ## Vue d'ensemble
 
 AtelierCatalog V1 est une application statique sans build. `index.html` charge CSS, données JavaScript réelles puis modules applicatifs par balises `<script>` relatives. Elle fonctionne directement sous `file://` : aucun `fetch()` n'est utilisé pour les collections principales, car son comportement sur fichiers locaux varie selon les navigateurs.

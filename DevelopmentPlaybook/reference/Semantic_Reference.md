@@ -1,6 +1,18 @@
 # Semantic Reference
 
-Ce document organise les concepts employés par DevelopmentPlaybook. Il constitue leur référence officielle et accueille chaque concept sous une entrée autonome.
+Le Semantic Reference est la source canonique des concepts employés par DevelopmentPlaybook. Chaque concept y possède une entrée autonome et un statut explicite.
+
+**Reference Charter**
+
+- **Status:** Active
+- **Purpose:** Établir et maintenir le vocabulaire officiel du Framework.
+- **Scope:** Signification, qualité, statut, organisation et relations sémantiques des concepts officiels.
+- **Included:** Concepts Approved, concepts Planned, domaines sémantiques et relations entre concepts.
+- **Excluded:** Règles méthodologiques, standards documentaires, règles d'architecture, conventions Git et contenus propres à un projet particulier.
+- **Authority:** Seule source normative des concepts dans son périmètre ; les entrées Planned restent non normatives.
+- **Dependencies:** `MASTER_SPECIFICATION.md` pour l'identité du Framework, l'architecture documentaire et le registre d'autorité.
+- **Responsibility:** Définir, distinguer, organiser et maintenir les concepts officiels sans créer de définitions concurrentes.
+- **Activation Criteria:** Charte complète, noyau conceptuel suffisant pour exercer la responsabilité déclarée, statuts explicites, dépendances disponibles, absence de contradiction majeure, Review et Validation réalisées, statut Active dans le Documentation Authority Registry.
 
 ## Metamodel
 
@@ -36,6 +48,7 @@ Il fournit une signification commune et stable qui peut être comprise, utilisé
 - Definition
 - Semantic Relation
 - Semantic Domain
+- Concept Status
 
 ### Definition
 
@@ -209,7 +222,7 @@ Status: Approved
 
 #### Definition
 
-Un goal est l'énoncé d'un résultat recherché, observable et intentionnel qu'un produit, un projet ou une organisation cherche à atteindre. Il traduit une direction en changement attendu sans prescrire la manière de le produire.
+Un goal est l'énoncé d'un résultat recherché, observable et intentionnel qu'un produit, un projet ou une organisation cherche à atteindre. Il décrit le changement attendu sans constituer une unité de planification ni prescrire la manière de le produire.
 
 #### Purpose
 
@@ -222,6 +235,7 @@ Il concentre les décisions et les efforts sur un résultat explicite, permet d'
 - Il doit préciser la valeur ou le changement recherché.
 - Il doit être formulé de manière claire et non ambiguë.
 - Il doit rester compatible avec la vision et contribuer à la mission.
+- Il doit rester distinct des unités de planification qui organisent les évolutions destinées à l'atteindre.
 - Il ne doit prescrire ni méthode, ni solution, ni séquence de travail.
 - Il ne doit pas définir les limites précises du produit, du projet ou de l'organisation.
 - Son horizon ou ses conditions d'atteinte doivent être indiqués lorsqu'ils sont nécessaires pour l'évaluer.
@@ -238,6 +252,7 @@ Il concentre les décisions et les efforts sur un résultat explicite, permet d'
 - Mission
 - Non-goal
 - Scope
+- Epic
 
 ### Non-goal
 
@@ -419,6 +434,7 @@ Elle fournit un repère commun et fiable pour retrouver, comprendre ou vérifier
 - Source of Truth
 - Artifact
 - Document
+- Authority
 
 ### Template
 
@@ -452,7 +468,8 @@ Il facilite la production répétée d'artefacts comparables, réduit les omissi
 
 - Artifact
 - Document
-- Reference
+- Example
+- Prompt
 
 ### Example
 
@@ -524,7 +541,106 @@ Il transforme une intention en indications exploitables, réduit les ambiguïté
 - Artifact
 - Document
 - Template
-- Example
+
+## Governance
+
+### Authority
+
+Status: Approved
+
+#### Definition
+
+L'authority est la capacité reconnue, attribuée dans un périmètre déclaré, par laquelle une information ou un concept fait foi lorsqu'il doit être interprété, appliqué ou départagé d'une représentation concurrente. Elle résulte d'une désignation explicite et non du seul contenu de l'information.
+
+#### Purpose
+
+Elle permet d'identifier ce qui prévaut pour une question donnée et de résoudre les divergences sans confondre la valeur d'une information avec le rôle qui lui a été attribué.
+
+#### Rules
+
+- Une authority doit être attribuée explicitement et son fondement doit pouvoir être identifié.
+- Son sujet et son périmètre doivent être suffisamment précis pour déterminer où elle s'applique.
+- Elle ne s'étend pas au-delà du périmètre pour lequel elle a été reconnue.
+- Une obligation de maintenir, décider ou agir ne confère pas à elle seule une authority.
+- Une source of truth est une source désignée qui exerce une authority sur un ensemble d'informations ; elle ne se confond pas avec l'authority elle-même.
+- Une information faisant autorité peut être descriptive sans être normative.
+- Une copie ou une représentation dérivée n'acquiert pas la même authority par sa seule conformité apparente.
+
+#### Examples
+
+- Une définition approuvée fait foi pour l'interprétation d'un terme dans le périmètre déclaré.
+- Un registre désigné fait autorité sur l'état reconnu d'éléments suivis sans prescrire les actions à entreprendre.
+- La personne chargée de maintenir un document n'obtient pas automatiquement l'autorité de modifier les règles qu'il contient.
+
+#### Related Concepts
+
+- Reference
+- Source of Truth
+- Normativity
+
+### Normativity
+
+Status: Approved
+
+#### Definition
+
+La normativity est le caractère prescriptif d'un énoncé, d'une règle ou de la définition d'un concept lorsqu'il établit ce qui doit être respecté dans un périmètre donné. Une information descriptive expose ou explique un état sans imposer par elle-même ce qui doit être fait.
+
+#### Purpose
+
+Elle permet de distinguer les prescriptions applicables des informations fournies uniquement pour comprendre, illustrer ou rendre compte d'une situation.
+
+#### Rules
+
+- Le caractère normatif d'un contenu doit être explicite ou résulter sans ambiguïté du rôle attribué à sa source.
+- Une prescription doit indiquer son périmètre lorsque celui-ci ne peut pas être déduit clairement de son contexte.
+- La normativity ne confère pas à elle seule une authority ; une prescription ne fait foi que si sa source possède l'authority nécessaire.
+- Une information peut faire autorité sur un fait ou un état tout en restant descriptive et non normative.
+- Une explication, un résumé ou un exemple ne devient pas normatif par sa seule proximité avec une règle.
+- Dans le Semantic Reference, seule la définition d'un concept au statut Approved possède un caractère normatif.
+
+#### Examples
+
+- Une règle exigeant qu'une décision significative soit examinée avant son adoption est normative.
+- Un rapport indiquant qu'une review a eu lieu est descriptif, même lorsqu'il fait autorité sur la date de cette review.
+- Un exemple montrant une manière possible d'appliquer une règle reste non normatif.
+
+#### Related Concepts
+
+- Authority
+- Concept Status
+
+### Concept Status
+
+Status: Approved
+
+#### Definition
+
+Un concept status est l'indication de la maturité d'un concept et de l'effet normatif de son entrée dans le Semantic Reference. Il possède uniquement deux valeurs : Planned et Approved.
+
+#### Purpose
+
+Il permet de distinguer les notions identifiées pour un développement futur des concepts dont la définition canonique est établie et applicable.
+
+#### Rules
+
+- Chaque entrée du Semantic Reference doit posséder exactement un concept status.
+- Planned indique qu'une notion est identifiée mais que sa définition canonique n'est pas encore approuvée ; son entrée n'est pas normative.
+- Approved indique que la définition canonique du concept est établie et normative dans le périmètre du Semantic Reference.
+- Aucun autre concept status ne doit être utilisé.
+- Le concept status qualifie la maturité de l'entrée conceptuelle, et non le statut d'un document, l'avancement d'un travail ou la validité d'une implémentation.
+- Il décrit la signification de Planned et Approved sans déterminer le processus permettant de passer de l'un à l'autre.
+
+#### Examples
+
+- Une entrée réservée avec une description à compléter porte le statut Planned.
+- Une entrée disposant d'une définition canonique examinée et adoptée porte le statut Approved.
+- La progression du travail nécessaire à une future définition ne modifie pas par elle-même le statut du concept.
+
+#### Related Concepts
+
+- Normativity
+- Concept
 
 ## Methodology
 
@@ -660,7 +776,7 @@ Status: Approved
 
 #### Definition
 
-Une review est un examen structuré d'un ou plusieurs éléments visant à apprécier leur cohérence, leur pertinence et le niveau de soutien dont ils disposent. Elle confronte les interprétations possibles sans déterminer automatiquement le choix à retenir.
+Une review est l'examen structuré d'une information, d'un résultat ou d'une proposition afin d'émettre un jugement argumenté sur sa cohérence, sa pertinence ou ses limites. Elle éclaire ce qui est examiné sans établir par elle-même que des critères d'acceptation sont satisfaits.
 
 #### Purpose
 
@@ -668,11 +784,12 @@ Elle rend l'évaluation explicite, met en évidence les accords et les divergenc
 
 #### Rules
 
-- Une review doit préciser les éléments examinés et les critères utilisés.
+- Une review doit préciser son objet, son point de vue et les critères qui orientent le jugement.
 - Elle doit distinguer les constats disponibles des interprétations qui en sont tirées.
 - Elle peut confronter plusieurs hypothèses sans devoir en retenir une.
-- Ses conclusions et les incertitudes restantes doivent être explicites.
-- Elle ne constitue pas automatiquement une décision, une validation ou une approbation.
+- Son jugement, ses constats et les incertitudes restantes doivent être explicites.
+- Elle ne constitue une validation que lorsque son objectif est d'établir explicitement la satisfaction de critères définis.
+- Elle ne constitue pas automatiquement une décision ou une approbation.
 - Elle peut être réalisée chaque fois qu'un examen structuré apporte une valeur, sans dépendre d'une séquence obligatoire.
 
 #### Examples
@@ -685,6 +802,7 @@ Elle rend l'évaluation explicite, met en évidence les accords et les divergenc
 
 - Hypothesis
 - Decision
+- Validation
 
 ### Decision
 
@@ -692,7 +810,7 @@ Status: Approved
 
 #### Definition
 
-Une décision est un choix explicite entre plusieurs possibilités ou orientations, effectué à partir des éléments disponibles dans un périmètre donné. Elle établit ce qui est retenu sans transformer ce choix en vérité générale.
+Une décision est un choix explicite entre plusieurs possibilités ou orientations, effectué à partir des éléments disponibles dans un périmètre donné. Elle établit ce qui est retenu sans transformer ce choix en vérité générale ; sa nature ne présume ni l'ampleur ni le caractère architectural de ses effets.
 
 #### Purpose
 
@@ -704,6 +822,7 @@ Elle permet d'orienter la suite des actions tout en conservant la raison du choi
 - Son périmètre, sa justification et ses conséquences significatives doivent pouvoir être identifiés.
 - Les incertitudes pertinentes ne doivent pas être masquées par le fait qu'un choix a été arrêté.
 - Elle doit pouvoir être réexaminée lorsque les éléments qui la soutiennent évoluent.
+- Elle ne devient une architecture decision que lorsque son impact durable concerne une structure, une responsabilité, une frontière ou une dépendance significative.
 - Elle ne transforme pas automatiquement une hypothèse en connaissance.
 - Elle peut exister sans être immédiatement mise en application.
 
@@ -717,6 +836,7 @@ Elle permet d'orienter la suite des actions tout en conservant la raison du choi
 
 - Review
 - Implementation
+- Architecture Decision
 
 ### Implementation
 
@@ -756,7 +876,7 @@ Status: Approved
 
 #### Definition
 
-Une validation est une évaluation fondée sur des éléments observables visant à déterminer si une proposition, une décision, une implémentation ou une connaissance demeure suffisamment soutenue dans son périmètre. Elle peut confirmer, nuancer ou remettre en question ce qui est évalué.
+Une validation est l'évaluation qui établit, à partir d'éléments observables, si une affirmation, une décision ou un résultat satisfait des critères définis dans un périmètre donné. Contrairement à une review, elle vise une conclusion explicite sur la satisfaction de ces critères.
 
 #### Purpose
 
@@ -764,10 +884,11 @@ Elle réduit l'incertitude en confrontant ce qui est attendu ou tenu pour valabl
 
 #### Rules
 
-- Une validation doit préciser ce qui est évalué, dans quel périmètre et sur quels éléments elle repose.
-- Ses critères doivent être identifiables avant que sa conclusion soit interprétée.
+- Une validation doit préciser ce qui est évalué, son périmètre et les éléments observables sur lesquels elle repose.
+- Ses critères doivent être définis avant que leur satisfaction soit évaluée.
 - Elle doit distinguer les résultats observés de la conclusion qui en est tirée.
 - Elle ne doit pas être confondue avec l'implémentation de ce qu'elle évalue.
+- Sa conclusion doit indiquer explicitement si les critères sont satisfaits, partiellement satisfaits ou non satisfaits.
 - Elle ne produit pas une certitude définitive et reste valable dans les limites des éléments examinés.
 - Un résultat défavorable ou ambigu doit rester visible et peut conduire à réviser une décision ou une connaissance.
 - Elle peut intervenir chaque fois qu'une affirmation doit être éprouvée, sans constituer obligatoirement la dernière étape d'une séquence.
@@ -782,6 +903,8 @@ Elle réduit l'incertitude en confrontant ce qui est attendu ou tenu pour valabl
 
 - Implementation
 - Knowledge
+- Review
+- Acceptance Criteria
 
 ## Delivery
 
@@ -791,18 +914,18 @@ Status: Approved
 
 #### Definition
 
-Une architecture decision est un choix explicite et durable qui détermine une structure, une responsabilité, une frontière ou une dépendance significative. Elle conserve le contexte du choix et les conséquences nécessaires à sa compréhension dans le temps.
+Une architecture decision est une décision dont l'impact durable concerne une structure, une responsabilité, une frontière ou une dépendance significative. Son caractère architectural résulte de la portée de ses effets, et non de la forme sous laquelle le choix est documenté.
 
 #### Purpose
 
-Elle rend une orientation structurante compréhensible et réexaminable afin que les évolutions ultérieures restent compatibles avec les raisons qui l'ont fondée.
+Elle stabilise une orientation structurante afin que les évolutions ultérieures puissent rester compatibles avec le choix effectué et ses conséquences.
 
 #### Rules
 
 - Une architecture decision doit porter sur un choix dont les effets dépassent une modification locale ou temporaire.
-- Elle doit rendre explicites le problème traité, le choix retenu et ses conséquences significatives.
-- Son périmètre et son état doivent pouvoir être identifiés.
-- Elle doit conserver les éléments nécessaires pour comprendre pourquoi le choix a été effectué.
+- Toute architecture decision est une décision, mais toute décision n'a pas un impact architectural.
+- Son problème, son périmètre, sa justification et ses conséquences significatives doivent être documentés.
+- Elle est le choix lui-même ; un ADR est l'artefact documentaire qui représente ce choix et en conserve le contexte.
 - Elle ne doit pas se réduire à une préférence de réalisation ou à un détail d'exécution.
 - Elle peut orienter une ou plusieurs epics, mais l'existence de l'une n'impose pas celle de l'autre.
 - Elle ne remplace pas les règles durables établies dans les références qui en ont la responsabilité.
@@ -815,6 +938,7 @@ Elle rend une orientation structurante compréhensible et réexaminable afin que
 
 #### Related Concepts
 
+- Decision
 - Epic
 
 ### Epic
@@ -823,16 +947,17 @@ Status: Approved
 
 #### Definition
 
-Une epic est une unité de planification qui décrit un objectif majeur d'évolution dont la réalisation nécessite plusieurs features cohérentes. Elle exprime le résultat d'ensemble recherché sans détailler chaque unité de travail.
+Une epic est une unité de planification qui coordonne un ensemble important d'évolutions vers un résultat commun. Elle organise la progression vers un ou plusieurs goals sans se confondre avec les résultats que ceux-ci décrivent.
 
 #### Purpose
 
-Elle regroupe et oriente des évolutions complémentaires vers un objectif commun suffisamment important pour dépasser la portée d'une seule feature.
+Elle fournit un cadre commun pour regrouper, suivre et ajuster des évolutions complémentaires dont la portée dépasse celle d'une évolution isolée.
 
 #### Rules
 
-- Une epic doit exprimer un objectif majeur et identifiable.
-- Elle doit réunir plusieurs features contribuant au même résultat d'ensemble.
+- Une epic doit être orientée vers un ou plusieurs goals identifiables.
+- Elle doit organiser un ensemble cohérent d'évolutions contribuant au même résultat d'ensemble.
+- Sa réalisation doit pouvoir être décomposée en plusieurs features sans que cette décomposition définisse sa signification.
 - Son périmètre doit rester suffisamment cohérent pour permettre une appréciation globale de sa progression et de son achèvement.
 - Elle ne doit pas détailler les tâches ou les moyens de réalisation.
 - Elle doit pouvoir évoluer lorsque les connaissances disponibles modifient la compréhension de l'objectif.
@@ -848,6 +973,7 @@ Elle regroupe et oriente des évolutions complémentaires vers un objectif commu
 #### Related Concepts
 
 - Architecture Decision
+- Goal
 - Feature
 
 ### Feature
@@ -856,16 +982,16 @@ Status: Approved
 
 #### Definition
 
-Une feature est une évolution cohérente qui apporte une capacité identifiable et contribue à l'objectif d'une epic. Elle possède une portée suffisamment délimitée pour que son résultat puisse être compris et évalué.
+Une feature est une évolution cohérente qui apporte au produit une capacité identifiable. Sa portée est suffisamment délimitée pour que la capacité obtenue puisse être comprise et évaluée indépendamment.
 
 #### Purpose
 
-Elle transforme une partie d'un objectif majeur en une capacité concrète pouvant être examinée indépendamment tout en restant reliée à l'évolution d'ensemble.
+Elle rend une évolution du produit observable à travers une capacité concrète, délimitée et susceptible d'être évaluée séparément.
 
 #### Rules
 
 - Une feature doit apporter une capacité ou un résultat identifiable.
-- Elle doit contribuer explicitement à une epic.
+- Lorsqu'elle contribue à une epic, cette contribution doit être explicite sans déterminer l'identité de la feature.
 - Son périmètre doit être cohérent et suffisamment limité pour permettre une évaluation distincte.
 - Elle ne doit pas être définie par un moyen, un outil ou une technique de réalisation.
 - Elle peut être décomposée en stories lorsque plusieurs unités de travail sont nécessaires.
@@ -882,6 +1008,7 @@ Elle transforme une partie d'un objectif majeur en une capacité concrète pouva
 
 - Epic
 - Story
+- Acceptance Criteria
 
 ### Story
 
@@ -889,15 +1016,15 @@ Status: Approved
 
 #### Definition
 
-Une story est une unité de travail délimitée qui contribue à une feature en produisant un résultat identifiable. Elle décrit ce qui doit être accompli dans un contexte donné sans imposer la manière de le réaliser.
+Une story est une unité cohérente de réalisation qui vise un résultat unique, délimité et vérifiable dans un contexte donné. Elle décrit ce qui doit être accompli sans imposer la manière de le réaliser.
 
 #### Purpose
 
-Elle rend une contribution suffisamment précise pour être comprise, réalisée et évaluée séparément tout en conservant son lien avec la capacité recherchée.
+Elle rend un travail suffisamment précis pour être compris, réalisé et évalué séparément.
 
 #### Rules
 
-- Une story doit contribuer à une feature identifiable.
+- Lorsqu'elle contribue à une feature, cette contribution doit être identifiable sans déterminer la signification de la story.
 - Elle doit viser un résultat unique et délimité.
 - Elle doit fournir le contexte nécessaire pour comprendre la contribution attendue.
 - Elle ne doit pas prescrire un outil, une technologie ou une méthode particulière sans nécessité propre au résultat.
@@ -922,7 +1049,7 @@ Status: Approved
 
 #### Definition
 
-Les acceptance criteria sont les conditions explicites et vérifiables permettant de déterminer si une story ou une feature peut être considérée comme terminée dans son périmètre déclaré.
+Les acceptance criteria sont un ensemble de conditions explicites et vérifiables permettant d'évaluer si un élément peut être considéré comme terminé dans son périmètre déclaré. Leur signification ne dépend pas de la nature particulière de l'élément évalué.
 
 #### Purpose
 
@@ -930,7 +1057,7 @@ Ils établissent une compréhension commune du résultat attendu et fournissent 
 
 #### Rules
 
-- Les acceptance criteria doivent être rattachés à une story ou à une feature identifiable.
+- Les acceptance criteria doivent être rattachés à un élément identifiable dont l'achèvement doit être évalué.
 - Chaque condition doit être claire, observable et vérifiable.
 - Ils doivent décrire le résultat nécessaire sans imposer inutilement la manière de l'obtenir.
 - Ils doivent couvrir les conditions indispensables à l'achèvement dans le périmètre déclaré.
@@ -946,7 +1073,9 @@ Ils établissent une compréhension commune du résultat attendu et fournissent 
 
 #### Related Concepts
 
+- Feature
 - Story
+- Validation
 
 ## Architecture
 
@@ -965,7 +1094,7 @@ Elle permet de savoir quelle information fait foi, de prévenir les contradictio
 #### Rules
 
 - Un ensemble d'informations possède une seule source de vérité désignée.
-- Son périmètre, son autorité et sa responsabilité doivent être explicites.
+- Son périmètre et son autorité doivent être explicites, ainsi que la manière dont sa maintenance est assurée.
 - Une copie ou une synthèse ne devient pas une source de vérité par simple duplication.
 - Toute modification appelée à faire autorité est effectuée dans la source de vérité avant d'être répercutée ailleurs.
 - Toute divergence est résolue à partir de la source de vérité ou par une décision explicite qui la remplace.
@@ -982,6 +1111,7 @@ Elle permet de savoir quelle information fait foi, de prévenir les contradictio
 - Reference
 - Document
 - Artifact
+- Authority
 
 ### Layer
 
