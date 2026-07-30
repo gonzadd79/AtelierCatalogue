@@ -37,6 +37,21 @@
         </div>
       </dl>
     </section>
+    <section id="projects-view" class="projects-view" aria-labelledby="projects-title">
+      <div class="projects-heading">
+        <div>
+          <p class="section-kicker">Cœur produit</p>
+          <h2 id="projects-title">Projets</h2>
+          <p id="project-summary" class="section-summary"></p>
+        </div>
+        <button id="new-project-button" type="button">Nouveau projet</button>
+      </div>
+      <div id="project-empty-state" class="project-empty" hidden>
+        <h3>Aucun projet pour le moment</h3>
+        <p>Créez un premier projet pour préparer et documenter une réalisation.</p>
+      </div>
+      <div id="project-list" class="project-list" role="list"></div>
+    </section>
     <section id="empty-state" class="empty" aria-labelledby="empty-title" hidden>
       <p class="empty-kicker">Tout est prêt</p>
       <h2 id="empty-title">Votre atelier peut prendre vie ici</h2>
@@ -56,7 +71,7 @@
         <div class="catalog-search">
           <label for="catalog-search-input">Rechercher un composant</label>
           <input id="catalog-search-input" type="search" placeholder="Rechercher un composant…" autocomplete="off" aria-describedby="catalog-search-help" aria-controls="catalog-grid catalog-no-results">
-          <p id="catalog-search-help">Recherche dans le nom, la catégorie et l'emplacement.</p>
+          <p id="catalog-search-help">Recherche dans le nom, la marque, le modèle et la référence.</p>
         </div>
         <div class="catalog-filters" role="group" aria-label="Filtres du catalogue">
           <div class="catalog-filter">
@@ -84,6 +99,83 @@
       <p id="error-message"></p>
     </section>
   </main>
+  <dialog id="project-dialog" class="item-dialog project-dialog" aria-labelledby="project-dialog-title">
+    <form id="project-form" method="dialog">
+      <div class="dialog-header">
+        <div>
+          <p class="section-kicker">Projet</p>
+          <h2 id="project-dialog-title">Nouveau projet</h2>
+        </div>
+        <button id="project-dialog-close" class="dialog-close" type="button">Fermer</button>
+      </div>
+      <div class="project-form-body">
+        <div class="form-field">
+          <label for="project-name">Nom</label>
+          <input id="project-name" name="name" type="text" required maxlength="160" autocomplete="off">
+        </div>
+        <div class="form-field">
+          <label for="project-description">Description</label>
+          <textarea id="project-description" name="description" rows="3"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="project-status">Statut</label>
+          <select id="project-status" name="status" required>
+            <option value="" disabled>Sélectionner un statut</option>
+            <option value="prévu">Prévu</option>
+            <option value="en-cours">En cours</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="project-cover-image">Image de couverture <span>(optionnelle)</span></label>
+          <input id="project-cover-image" name="coverImage" type="text" placeholder="media/projects/mon-projet/cover.jpg" aria-describedby="project-cover-help">
+          <p id="project-cover-help" class="field-help">Chemin local relatif vers l'image publiée.</p>
+        </div>
+        <div class="form-field">
+          <label for="project-notes">Notes</label>
+          <textarea id="project-notes" name="notes" rows="4"></textarea>
+        </div>
+        <p id="project-form-error" class="form-error" role="alert" hidden></p>
+        <div class="form-actions">
+          <button id="project-cancel" class="button-secondary" type="button">Annuler</button>
+          <button id="project-submit" type="submit">Créer le projet</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+  <dialog id="project-usage-dialog" class="item-dialog project-dialog" aria-labelledby="usage-dialog-title">
+    <form id="project-usage-form" method="dialog">
+      <div class="dialog-header">
+        <div>
+          <p class="section-kicker">Articles utilisés</p>
+          <h2 id="usage-dialog-title">Ajouter un article</h2>
+        </div>
+        <button id="usage-dialog-close" class="dialog-close" type="button">Fermer</button>
+      </div>
+      <div class="project-form-body">
+        <div class="form-field">
+          <label for="usage-item">Article</label>
+          <select id="usage-item" name="itemId" required></select>
+        </div>
+        <div class="form-field">
+          <label for="usage-quantity">Quantité</label>
+          <input id="usage-quantity" name="quantity" type="number" min="0.000001" step="any" required>
+        </div>
+        <div class="form-field">
+          <label for="usage-role">Rôle <span>(optionnel)</span></label>
+          <input id="usage-role" name="role" type="text" maxlength="160" autocomplete="off">
+        </div>
+        <div class="form-field">
+          <label for="usage-notes">Remarque <span>(optionnelle)</span></label>
+          <textarea id="usage-notes" name="notes" rows="3"></textarea>
+        </div>
+        <p id="usage-form-error" class="form-error" role="alert" hidden></p>
+        <div class="form-actions">
+          <button id="usage-cancel" class="button-secondary" type="button">Annuler</button>
+          <button id="usage-submit" type="submit">Ajouter</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
   <dialog id="item-dialog" class="item-dialog" aria-labelledby="item-dialog-title" aria-describedby="item-dialog-context">
     <div class="dialog-header">
       <div>
@@ -110,7 +202,12 @@
   <script src="data/projects-data.js"></script>
   <script src="app/js/catalog.js"></script>
   <script src="app/js/search.js"></script>
+  <script src="app/js/quantities.js"></script>
+  <script src="app/js/feasibility.js"></script>
+  <script src="app/js/project-requirements.js"></script>
+  <script src="app/js/projects.js"></script>
   <script src="app/js/ui.js"></script>
+  <script src="app/js/project-ui.js"></script>
   <script src="app/js/app.js"></script>
 </body>
 </html>

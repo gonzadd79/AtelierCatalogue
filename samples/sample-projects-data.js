@@ -24,7 +24,7 @@ window.AtelierCatalogSampleData.projects = {
       itemUsages: [
         { itemId: "demo-raspberry-pi", quantity: 1, role: "Calcul fictif", isMissing: false, alternativeItemIds: [] },
         { itemId: "demo-audio-amplifier", quantity: 1, role: "Amplification fictive", isMissing: false, alternativeItemIds: [] },
-        { itemId: "demo-speaker-pair", quantity: 1, role: "Restitution audio fictive", isMissing: false, alternativeItemIds: [] }
+        { itemId: "demo-missing-speaker-pair", quantity: 1, role: "Restitution audio fictive", isMissing: false, alternativeItemIds: [] }
       ],
       media: [], documents: [], notes: "Données exclusivement destinées aux essais."
     },

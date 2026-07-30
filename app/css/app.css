@@ -34,6 +34,7 @@ body {
 .hero,
 .dashboard,
 .demo-banner,
+.projects-view,
 .catalog-view,
 .empty,
 .error {
@@ -84,6 +85,7 @@ body {
 }
 
 .empty,
+.projects-view,
 .catalog-view,
 .error {
   margin-top: 1.25rem;
@@ -93,6 +95,235 @@ body {
 .empty {
   background: var(--surface-soft);
   text-align: center;
+}
+
+.projects-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.projects-heading button { flex: 0 0 auto; margin: 0; }
+
+.section-summary {
+  margin: .35rem 0 0;
+  color: var(--muted);
+}
+
+.project-empty {
+  padding: 1.5rem;
+  border: 1px dashed var(--border);
+  border-radius: .75rem;
+  background: var(--surface-soft);
+  text-align: center;
+}
+
+.project-empty h3,
+.project-empty p { margin: 0; }
+
+.project-empty p { margin-top: .35rem; color: var(--muted); }
+
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.project-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: .85rem;
+  background: var(--surface);
+}
+
+.project-cover {
+  display: grid;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-soft);
+  place-items: center;
+}
+
+.project-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+.project-cover-placeholder {
+  display: grid;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 800;
+  place-items: center;
+}
+
+.project-card-content { padding: 1rem; }
+
+.project-status {
+  display: inline-block;
+  margin: .75rem 0 0;
+  padding: .2rem .55rem;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 750;
+}
+
+.project-card-title { margin: 0; font-size: 1.18rem; }
+
+.project-description,
+.project-notes { margin: .6rem 0 0; color: var(--muted); }
+
+.project-notes { font-size: .9rem; }
+
+.project-feasibility,
+.project-requirements,
+.project-usages,
+.project-notes-section {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.project-feasibility h4,
+.project-requirements h4 { margin: 0; font-size: 1rem; }
+
+.project-notes-section h4 { margin: 0; font-size: 1rem; }
+
+.project-usages-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-usages-heading h4 { margin: 0; font-size: 1rem; }
+
+.feasibility-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .5rem;
+  margin: .75rem 0 0;
+}
+
+.feasibility-summary div {
+  padding: .55rem .65rem;
+  border: 1px solid var(--border);
+  border-radius: .55rem;
+  background: var(--surface-soft);
+}
+
+.feasibility-summary dt { color: var(--muted); font-size: .75rem; }
+.feasibility-summary dd { margin: .15rem 0 0; font-size: 1.05rem; font-weight: 700; }
+
+.requirements-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.requirements-empty { margin: .75rem 0 0; color: var(--muted); }
+.requirement-missing-quantity { font-weight: 700; }
+
+.usage-empty { margin: .75rem 0 0; color: var(--muted); }
+
+.usage-table-wrapper {
+  margin-top: .75rem;
+  overflow-x: auto;
+}
+
+.usage-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+.usage-table-wrapper th,
+.usage-table-wrapper td {
+  padding: .65rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.usage-table-wrapper th { color: var(--muted); font-size: .8rem; }
+
+.usage-item-name { font-weight: 700; }
+
+.feasibility-state { white-space: nowrap; font-weight: 700; }
+.feasibility-available { color: #237a47; }
+.feasibility-insufficient { color: #9a6500; }
+.feasibility-missing { color: var(--danger); }
+
+.usage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.project-actions,
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .65rem;
+  margin-top: 1.25rem;
+}
+
+.project-actions button,
+.form-actions button,
+.usage-actions button { margin: 0; }
+
+.button-compact { padding: .45rem .65rem; font-size: .84rem; }
+
+.button-secondary {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.button-danger {
+  border-color: var(--danger);
+  background: transparent;
+  color: var(--danger);
+}
+
+.project-form-body {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.form-field { display: grid; gap: .4rem; }
+
+.form-field label { font-weight: 700; }
+
+.form-field label span,
+.field-help { color: var(--muted); font-weight: 400; }
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: .75rem .85rem;
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.form-field textarea { resize: vertical; }
+
+.field-help { margin: 0; font-size: .88rem; }
+
+.form-error {
+  margin: 0;
+  padding: .75rem;
+  border: 1px solid var(--danger);
+  border-radius: .6rem;
+  color: var(--danger);
 }
 
 .error { border-color: var(--danger); }
@@ -530,6 +761,7 @@ button:disabled {
   .hero,
   .dashboard,
   .demo-banner,
+  .projects-view,
   .catalog-view,
   .empty,
   .error { padding: 1.1rem; }
@@ -541,9 +773,12 @@ button:disabled {
   .metrics { grid-template-columns: 1fr; }
   .metric { flex-direction: row; align-items: center; justify-content: space-between; }
   .catalog-heading { display: block; }
+  .projects-heading { align-items: flex-start; }
+  .project-usages-heading { align-items: flex-start; }
   #catalog-summary { margin-top: .35rem; }
   .catalog-filters { grid-template-columns: 1fr; }
   .catalog-grid { grid-template-columns: 1fr; }
+  .feasibility-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .item-dialog {
     width: calc(100% - 1rem);
     max-height: calc(100dvh - 1rem);

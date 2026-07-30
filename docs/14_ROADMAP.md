@@ -2,82 +2,226 @@
 
 > **Autorité documentaire : canonique pour la planification.** Ce document est l'unique registre des Epics et possède leurs identifiants, leurs noms, leur ordre et leurs statuts. Il organise la réalisation du [Scope canonique](02_SCOPE.md), sans le modifier, et respecte la [Vision](product/30_PRODUCT_VISION.md) ainsi que les [décisions d'architecture](15_DECISIONS.md). Aucun autre document ne peut créer, renommer, renuméroter ou redéfinir une Epic.
 
-Chaque Epic possède exactement un des statuts suivants : `Planned`, `In Progress`, `Completed` ou `Deferred`. Chaque Story est petite, verticale, testable et compatible avec un commit cohérent. La présence d'un élément dans la Roadmap ne suffit pas à déclarer sa disponibilité ; le README peut résumer l'état observable du produit sans acquérir d'autorité de planification. Les critères de maturité autorisent le passage à l'Epic suivant sans interdire des retours ciblés.
+Chaque Epic possède exactement un des statuts suivants : `Planned`, `In Progress`, `Completed` ou `Deferred`. Les Features ci-dessous regroupent uniquement des Stories et responsabilités déjà documentées ; leur réorganisation ne crée, ne supprime et ne modifie aucune capacité. La présence d'un élément dans la Roadmap ne suffit pas à déclarer sa disponibilité.
+
+## Parcours V1
+
+La planification suit désormais le parcours utilisateur : connaître le matériel, retrouver un article, préparer un projet, vérifier sa faisabilité, documenter sa réalisation puis retrouver les connaissances acquises. L'inventaire constitue la fondation ; le projet organise la valeur produite à partir de cette fondation.
+
+Les capacités d'intelligence générative, de reconnaissance automatique, de synchronisation avec des boutiques, d'estimation automatique des prix et de collaboration multi-utilisateurs restent hors V1. Elles ne sont affectées à aucune Epic V1.
+
+## Ordre recommandé de développement
+
+| Ordre | Epic | Résultat utilisateur | Statut |
+| --- | --- | --- | --- |
+| 1 | EPIC-001 — Fondation portable | Ouvrir une base locale fiable et transportable. | Completed |
+| 2 | EPIC-002 — Inventaire exploitable | Connaître, reconnaître et localiser son matériel. | In Progress |
+| 3 | EPIC-003 — Recherche et consultation | Retrouver rapidement un article pertinent. | In Progress |
+| 4 | EPIC-004 — Cœur Projet | Créer un projet et lui associer les composants utilisés. | Planned |
+| 5 | EPIC-005 — Faisabilité et besoins | Distinguer immédiatement le disponible du manquant. | Planned |
+| 6 | EPIC-006 — Documentation de réalisation | Réunir les schémas, photos et documents du projet. | Planned |
+| 7 | EPIC-007 — Capitalisation et reprise | Retrouver les composants, projets et documents liés. | Planned |
+| Après V1 | EPIC-008 à EPIC-010 | Capacités différées sans effet sur le parcours V1. | Deferred |
+
+EPIC-003 peut avancer dès que le catalogue minimal d'EPIC-002 est disponible. Après EPIC-004, EPIC-005 et EPIC-006 peuvent être réalisées indépendamment ; EPIC-007 les réunit dans le parcours de consultation final.
+
+## Dépendances entre Epics
+
+```mermaid
+flowchart LR
+  E1["EPIC-001<br/>Fondation portable"] --> E2["EPIC-002<br/>Inventaire exploitable"]
+  E2 --> E3["EPIC-003<br/>Recherche et consultation"]
+  E2 --> E4["EPIC-004<br/>Cœur Projet"]
+  E2 --> E5["EPIC-005<br/>Faisabilité et besoins"]
+  E4 --> E5
+  E2 --> E6["EPIC-006<br/>Documentation de réalisation"]
+  E4 --> E6
+  E3 --> E7["EPIC-007<br/>Capitalisation et reprise"]
+  E4 --> E7
+  E5 --> E7
+  E6 --> E7
+```
+
+Les Epics différées dépendent d'un modèle V1 stabilisé, mais aucune Epic V1 ne dépend d'elles.
 
 ## Traçabilité du Scope V1
 
-Les identifiants renvoient exclusivement au [Scope canonique](02_SCOPE.md). Cette matrice n'en reproduit aucune exigence.
+Les identifiants renvoient exclusivement au [Scope canonique](02_SCOPE.md). Cette matrice n'en reproduit aucune exigence et attribue chaque identifiant V1 à une seule Epic.
 
 | Epic | Scope IDs | V1 | Statut |
 | --- | --- | --- | --- |
 | EPIC-001 | S-001, S-002, S-022, S-023, S-035 | Oui | Completed |
-| EPIC-002 | S-003, S-005, S-006, S-017 à S-021, S-024, S-026, S-036, S-037 | Oui | Completed |
-| EPIC-003 | S-004, S-007, S-008, S-027 à S-030, S-038 | Oui | In Progress |
-| EPIC-004 | S-009, S-012, S-016, S-025, S-032 | Oui | Planned |
-| EPIC-005 | S-010, S-011, S-031 | Oui | Planned |
-| EPIC-006 | S-015, S-033 | Oui | Planned |
-| EPIC-007 | S-013, S-014, S-034 | Oui | Planned |
-| EPIC-008 | HV1-014, HV1-015 | Non | Planned |
-| EPIC-009 | HV1-013 | Non | Planned |
-| EPIC-010 | HV1-016 à HV1-018 | Non | Planned |
+| EPIC-002 | S-003, S-005, S-006, S-009, S-012, S-014, S-016 à S-021, S-024 à S-026, S-032, S-034, S-036, S-037 | Oui | In Progress |
+| EPIC-003 | S-004, S-007, S-008, S-027 à S-030 | Oui | In Progress |
+| EPIC-004 | S-015 | Oui | Planned |
+| EPIC-005 | S-013 | Oui | Planned |
+| EPIC-006 | S-010, S-011, S-031 | Oui | Planned |
+| EPIC-007 | S-033, S-038 | Oui | Planned |
+| EPIC-008 | HV1-014, HV1-015 | Non | Deferred |
+| EPIC-009 | HV1-013 | Non | Deferred |
+| EPIC-010 | HV1-016 à HV1-018 | Non | Deferred |
 | Aucune Epic planifiée | HV1-001 à HV1-012, HV1-019 à HV1-022 | Non | — |
 
-## EPIC-001 — Fondation
+## EPIC-001 — Fondation portable
 
 **Status: Completed.**
 
-**Objectif.** Poser dépôt, documentation, conventions, données vides, page locale minimale et vérification de portabilité. **Valeur.** Une base honnête, ouvrable et partageable. **Hors périmètre.** Catalogue complet et saisie réelle. **Stories.** EPIC-001-S01 créer le socle ; EPIC-001-S02 exécuter la checklist sur une copie et consigner les navigateurs. **Maturité.** Structure cohérente, écran vide local, aucun réseau ni chemin absolu. **Risques.** Documentation trop théorique, comportement `file://` variable.
+**Objectif produit.** Fournir un socle local, portable et honnête sur son état.
 
-## EPIC-002 — Catalogue minimal
+**Valeur utilisateur.** L'atelier peut être ouvert, copié et consulté sans dépendance extérieure.
+**Features contenues.**
 
-**Status: Completed.**
+- **EPIC-001-F01 — Socle local** : structure initiale, données vides et page minimale (anciennement EPIC-001-S01).
+- **EPIC-001-F02 — Vérification de portabilité** : exécution de la checklist sur une copie et consignation des environnements vérifiés (anciennement EPIC-001-S02).
 
-**Objectif.** Lire une collection, guider le premier lancement et consulter une première fiche simple. **Valeur.** Prouver le flux données → interface sans donner l'impression d'une base de données. **Hors périmètre.** Recherche fonctionnelle, édition et spécifications avancées. **Stories.** EPIC-002-S01 transformer l'état vide en premier lancement guidé avec accès au workflow photo ; EPIC-002-S02 ajouter un mode démonstration explicite et réversible ; EPIC-002-S03 rendre un tableau de bord synthétique pour collection vide ou non vide ; EPIC-002-S04 créer une vue cartes minimale ; EPIC-002-S05 ouvrir une fiche simple par identifiant. **Maturité.** Données réelles et exemples ne se mélangent jamais, l'état vide n'est pas une erreur et la navigation clavier est opérationnelle. **Risques.** Coupler UI et format global, faire passer la démo pour le stock, annoncer un import qui n'existe pas.
+**Dépendances.** Aucune.
 
-## EPIC-003 — Recherche et filtres
+**Justification.** Toute capacité V1 dépend d'une base locale fiable ; cette Epic reste volontairement indépendante du domaine.
+
+## EPIC-002 — Inventaire exploitable
 
 **Status: In Progress.**
 
-**Objectif.** Retrouver une entrée sans parcourir tout le catalogue. **Valeur.** Réduction immédiate du temps de recherche. **Hors périmètre.** Sémantique, IA, requêtes numériques complexes. **Stories.** EPIC-003-S01 installer une recherche principale persistante ; EPIC-003-S02 normaliser et rechercher nom/référence/tags ; EPIC-003-S03 ajouter catégories et accès rapides ; EPIC-003-S04 filtres simples et réinitialisation ; EPIC-003-S05 tri déterministe ; EPIC-003-S06 distinguer catalogue vide et aucun résultat. **Maturité.** Cas accents, casse, tirets et références partielles testés ; scénario de recherche d'un article ancien mesuré en moins de trente secondes. **Risques.** Normalisation destructive, filtres incompréhensibles, perte de la requête pendant la navigation.
+**Objectif produit.** Permettre à l'utilisateur de connaître, reconnaître et localiser le matériel qu'il possède.
 
-## EPIC-004 — Fiches détaillées
+**Valeur utilisateur.** L'inventaire devient une fondation compréhensible pour préparer les projets, sans prendre la place du projet.
+**Features contenues.**
+
+- **EPIC-002-F01 — Premier inventaire** : premier lancement guidé et accès au workflow photo (anciennement EPIC-002-S01).
+- **EPIC-002-F02 — Démonstration distincte** : exemples explicites, séparés des données réelles et réversibles (anciennement EPIC-002-S02).
+- **EPIC-002-F03 — Vue d'ensemble** : tableau de bord, cartes et tableau, y compris pour un inventaire vide (anciennement EPIC-002-S03 et EPIC-002-S04).
+- **EPIC-002-F04 — Consultation d'un article** : ouverture par identifiant et présentation structurée de l'identité, du statut, des spécifications, de la confiance et des sources (anciennement EPIC-002-S05 et EPIC-004-S01, S02, S05).
+- **EPIC-002-F05 — Localisation** : emplacement, arborescence et répartition multi-emplacements (anciennement EPIC-004-S04 et EPIC-007-S02, S03).
+
+**Dépendances.** EPIC-001.
+
+**Justification.** Le projet ne peut évaluer ni utiliser du matériel qui n'est pas d'abord identifiable et localisable. Les informations de quantité sont volontairement traitées par EPIC-005, où elles produisent leur valeur dans le parcours Projet.
+
+## EPIC-003 — Recherche et consultation
+
+**Status: In Progress.**
+
+**Objectif produit.** Retrouver un article sans parcourir tout l'inventaire.
+
+**Valeur utilisateur.** Le matériel pertinent reste accessible au moment de préparer ou de reprendre un projet.
+**Features contenues.**
+
+- **EPIC-003-F01 — Recherche principale** : recherche persistante et normalisée sur les informations déjà prévues (anciennement EPIC-003-S01 et S02).
+- **EPIC-003-F02 — Accès rapides et filtres** : catégories, accès rapides, filtres simples et réinitialisation (anciennement EPIC-003-S03 et S04).
+- **EPIC-003-F03 — Résultats maîtrisés** : tri déterministe et distinction entre inventaire vide et absence de résultat (anciennement EPIC-003-S05 et S06).
+
+**Dépendances.** EPIC-002, dès que son catalogue minimal est disponible.
+
+**Justification.** La recherche est utile avant même que le modèle Projet soit disponible et devient ensuite un point d'entrée vers les usages projet.
+
+## EPIC-004 — Cœur Projet
 
 **Status: Planned.**
 
-**Objectif.** Expliquer identité et données essentielles d'un article. **Valeur.** Décision technique traçable. **Hors périmètre.** Recommandations automatiques. **Stories.** EPIC-004-S01 identité et statut ; EPIC-004-S02 spécifications structurées ; EPIC-004-S03 quantité ; EPIC-004-S04 emplacement ; EPIC-004-S05 confiance et sources. **Maturité.** Inconnues et conditions visibles, aucune chaîne non fiable injectée. **Risques.** Densité type ERP, faux sentiment de précision.
+**Objectif produit.** Créer et consulter un projet, puis lui associer les composants utilisés avec leur rôle et leur quantité.
 
-## EPIC-005 — Médias et annexes
+**Valeur utilisateur.** Le maker prépare sa réalisation autour d'un contexte concret plutôt qu'autour d'une simple liste de stock.
+**Features contenues.**
+
+- **EPIC-004-F01 — Projets** : liste et création d'un projet à partir de la représentation déjà documentée (anciennement EPIC-006-S01).
+- **EPIC-004-F02 — Fiche projet** : consultation du contexte et des informations du projet (anciennement EPIC-006-S02).
+- **EPIC-004-F03 — Composants utilisés** : association des articles, rôles et quantités au moyen de `Project.itemUsages` (anciennement EPIC-006-S03).
+
+**Dépendances.** EPIC-002.
+
+**Justification.** Cette Epic installe le projet comme cœur du produit. Elle ne crée ni gestion de tâches, ni budget, ni workflow de projet.
+
+## EPIC-005 — Faisabilité et besoins
 
 **Status: Planned.**
 
-**Objectif.** Reconnaître l'objet et consulter ses documents. **Valeur.** Réunir objet, preuve visuelle et documentation. **Hors périmètre.** Import automatisé. **Stories.** EPIC-005-S01 galerie accessible ; EPIC-005-S02 photo principale et rôles ; EPIC-005-S03 distinguer photo réelle/externe ; EPIC-005-S04 documents locaux/externes ; EPIC-005-S05 état fichier manquant. **Maturité.** Origine, droits et hors-ligne visibles. **Risques.** Confusion d'origine, poids des fichiers, liens cassés.
+**Objectif produit.** Vérifier les besoins matériels d'un projet et distinguer ce qui est disponible de ce qui manque.
 
-## EPIC-006 — Projets
+**Valeur utilisateur.** Le maker sait immédiatement s'il peut commencer et ce qu'il doit se procurer.
+**Features contenues.**
+
+- **EPIC-005-F01 — Quantités et disponibilité** : états de quantité consultables et cohérents (anciennement EPIC-004-S03 et EPIC-007-S01).
+- **EPIC-005-F02 — Affectations simples** : prise en compte des usages et réservations déjà prévus, sans comptabilité de stock exhaustive (anciennement EPIC-007-S04).
+- **EPIC-005-F03 — Manquants et alternatives** : lecture des informations déjà portées par les usages projet.
+- **EPIC-005-F04 — Shopping list** : vue dérivée exclusivement des composants manquants du projet ; elle ne possède ni ne duplique ces informations.
+
+**Dépendances.** EPIC-002 et EPIC-004.
+
+**Justification.** La faisabilité découle du rapprochement entre l'inventaire et les usages du projet. La shopping list clarifie un résultat existant sans introduire de nouvelle autorité ni de synchronisation commerciale.
+
+## EPIC-006 — Documentation de réalisation
 
 **Status: Planned.**
 
-**Objectif.** Relier les objets à leur contexte d'usage. **Valeur.** Reprendre un projet et comprendre l'affectation du matériel. **Hors périmètre.** Gestion de tâches et budgets. **Stories.** EPIC-006-S01 liste ; EPIC-006-S02 fiche projet ; EPIC-006-S03 usages et quantités ; EPIC-006-S04 navigation projet → objet ; EPIC-006-S05 navigation objet → projets. **Maturité.** Liens orphelins détectés et rôles lisibles. **Risques.** Relations divergentes, dérive vers un gestionnaire complet.
+**Objectif produit.** Associer aux articles et aux projets les photos, schémas et documents nécessaires à leur compréhension et à leur reprise.
 
-## EPIC-007 — Stock et emplacements
+**Valeur utilisateur.** La réalisation reste compréhensible longtemps après son exécution.
+**Features contenues.**
+
+- **EPIC-006-F01 — Galerie** : consultation accessible des médias (anciennement EPIC-005-S01).
+- **EPIC-006-F02 — Rôles et origine des photos** : photo principale, rôles et distinction entre exemplaire réel et ressource externe (anciennement EPIC-005-S02 et S03).
+- **EPIC-006-F03 — Documents et schémas** : consultation des ressources locales ou externes associées aux articles et projets (anciennement EPIC-005-S04).
+- **EPIC-006-F04 — Ressource indisponible** : état explicite d'un fichier manquant (anciennement EPIC-005-S05).
+
+**Dépendances.** EPIC-002 pour les articles et EPIC-004 pour les projets.
+
+**Justification.** Les mêmes responsabilités documentaires servent l'objet physique et son contexte de réalisation ; elles restent regroupées pour éviter deux autorités concurrentes.
+
+## EPIC-007 — Capitalisation et reprise
 
 **Status: Planned.**
 
-**Objectif.** Expliquer quantité, disponibilité et rangement. **Valeur.** Trouver physiquement et éviter une double affectation. **Hors périmètre.** Comptabilité de stock exhaustive. **Stories.** EPIC-007-S01 états de quantité ; EPIC-007-S02 arborescence d'emplacements ; EPIC-007-S03 répartition multi-emplacements ; EPIC-007-S04 réservations simples. **Maturité.** Inconnues et incohérences détectées, sommes explicables. **Risques.** Confondre absence et zéro, allocations incompatibles.
+**Objectif produit.** Retrouver les liens entre composants, projets et documents afin de réutiliser les connaissances acquises.
+
+**Valeur utilisateur.** Un projet ancien peut être repris et un composant peut être replacé dans ses usages passés sans reconstituer manuellement le contexte.
+**Features contenues.**
+
+- **EPIC-007-F01 — Navigation projet vers articles** : accès aux composants utilisés depuis le projet (anciennement EPIC-006-S04).
+- **EPIC-007-F02 — Navigation article vers projets** : projection calculée des projets utilisant l'article, sans dupliquer `Project.itemUsages` (anciennement EPIC-006-S05).
+- **EPIC-007-F03 — Reprise contextualisée** : consultation conjointe des usages et des schémas déjà disponibles, sans nouveau modèle de connaissance.
+
+**Dépendances.** EPIC-003, EPIC-004, EPIC-005 et EPIC-006.
+
+**Justification.** Cette Epic ferme le parcours V1 : elle ne crée pas de contenu, mais rend navigables les relations et documents établis par les Epics précédentes.
 
 ## EPIC-008 — Intake et validation
 
-**Status: Planned.**
+**Status: Deferred.**
 
-**Objectif.** Transformer prudemment des entrants en données publiées. **Valeur.** Réduire la saisie sans sacrifier la vérité. **Hors périmètre.** Publication autonome par IA. **Stories.** EPIC-008-S01 lister photos en attente ; EPIC-008-S02 regrouper en brouillons ; EPIC-008-S03 enregistrer identification proposée ; EPIC-008-S04 validation humaine ; EPIC-008-S05 publication et classement logique. **Maturité.** Originaux intacts, audit de chaque affirmation, rejet récupérable. **Risques.** Mauvais regroupement, perte d'origine, automatisation trop affirmative.
+**Objectif produit.** Transformer prudemment des entrants en données publiées.
+
+**Valeur utilisateur.** Réduire une future saisie manuelle sans sacrifier la traçabilité.
+
+**Features contenues.** Photos en attente, regroupement en brouillons, identification proposée, validation humaine, publication et classement logique (anciennement EPIC-008-S01 à S05).
+
+**Dépendances.** EPIC-002 et EPIC-006 stabilisées.
+
+**Justification.** L'automatisation d'intake n'est pas nécessaire au parcours V1 et ne doit pas retarder le cœur Projet. La reconnaissance automatique reste exclue.
 
 ## EPIC-009 — Administration locale
 
-**Status: Planned.**
+**Status: Deferred.**
 
-**Objectif.** Éditer sans manipuler directement les fichiers publiés. **Valeur.** Saisie plus sûre et accessible. **Hors périmètre.** Cloud et collaboration. **Stories.** EPIC-009-S01 prototype optionnel ; EPIC-009-S02 formulaire article ; EPIC-009-S03 validation de schéma et relations ; EPIC-009-S04 aperçu des changements ; EPIC-009-S05 génération atomique des données. **Maturité.** Sauvegarde, annulation et résultat portable prouvés. **Risques.** Rendre l'outil obligatoire, choisir trop tôt une plateforme.
+**Objectif produit.** Éditer ultérieurement sans manipuler directement les fichiers publiés.
+
+**Valeur utilisateur.** Rendre la saisie plus sûre et accessible lorsque le modèle V1 est éprouvé.
+
+**Features contenues.** Prototype optionnel, formulaire article, validation des schémas et relations, aperçu des changements, génération atomique (anciennement EPIC-009-S01 à S05).
+
+**Dépendances.** Modèle V1 stabilisé après EPIC-007.
+
+**Justification.** Un outil d'administration prématuré augmenterait le coût de stabilisation sans améliorer le parcours utilisateur V1.
 
 ## EPIC-010 — Exports et pérennité
 
-**Status: Planned.**
+**Status: Deferred.**
 
-**Objectif.** Faciliter échange, sauvegarde et contrôle durable. **Valeur.** Réutilisation hors application et restauration fiable. **Hors périmètre.** Synchronisation temps réel. **Stories.** EPIC-010-S01 export CSV documenté ; EPIC-010-S02 export JSON versionné ; EPIC-010-S03 manifeste de sauvegarde ; EPIC-010-S04 vérification d'intégrité ; EPIC-010-S05 QR codes résolvant des identifiants stables. **Maturité.** Aller-retour testé, erreurs non destructives, documentation de restauration. **Risques.** Exports incomplets, exposition de données privées, QR liés à un chemin physique.
+**Objectif produit.** Faciliter ultérieurement l'échange, la sauvegarde et le contrôle durable.
+
+**Valeur utilisateur.** Réutiliser les informations hors du produit et restaurer un ensemble cohérent.
+
+**Features contenues.** Export CSV, export JSON versionné, manifeste de sauvegarde, vérification d'intégrité et QR codes fondés sur des identifiants stables (anciennement EPIC-010-S01 à S05).
+
+**Dépendances.** Modèle V1 stabilisé après EPIC-007.
+
+**Justification.** Ces capacités restent utiles mais ne sont pas nécessaires pour démontrer la valeur du parcours Projet en V1.

@@ -15,7 +15,7 @@
     criteria = typeof criteria === "string" ? { query: criteria } : criteria || {};
     normalizedQuery = normalize(criteria.query);
     return items.filter(function (item) {
-      var matchesQuery = !normalizedQuery || [item.name, item.categoryName, item.locationName].some(function (value) {
+      var matchesQuery = !normalizedQuery || [item.name, item.brand, item.model, item.reference].some(function (value) {
         return normalize(value).indexOf(normalizedQuery) !== -1;
       });
       var matchesCategory = !criteria.categoryName || item.categoryName === criteria.categoryName;

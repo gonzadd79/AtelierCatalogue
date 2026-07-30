@@ -37,6 +37,20 @@
     return fallback;
   }
 
+  function firstProjectNameForItem(itemId, projects) {
+    var project;
+    var position;
+    for (position = 0; position < projects.length; position += 1) {
+      project = projects[position];
+      if (project && Array.isArray(project.itemUsages) && project.itemUsages.some(function (usage) {
+        return usage && usage.itemId === itemId;
+      })) {
+        return project.name || "Projet sans nom";
+      }
+    }
+    return null;
+  }
+
   function formatQuantity(quantity, stockUnit) {
     if (!quantity || quantity.unknown === true || typeof quantity.total !== "number") {
       return "Quantité inconnue";
@@ -98,18 +112,21 @@
     var items = requireCollection(data, "inventory", "items", "d'inventaire");
     var categories = indexById(requireCollection(data, "catalogs", "categories", "des catalogues"));
     var locations = indexById(requireCollection(data, "locations", "locations", "des emplacements"));
-    var projects = indexById(requireCollection(data, "projects", "projects", "des projets"));
+    var projects = requireCollection(data, "projects", "projects", "des projets");
 
     return items.map(function (item) {
       return {
         id: item.id,
         name: item.name || "Article sans nom",
+        brand: item.brand || item.manufacturer || "",
+        model: item.model || item.variant || "",
+        reference: item.reference || "",
         categoryName: item.categoryId && categories[item.categoryId]
           ? categories[item.categoryId].name
           : "Catégorie inconnue",
         locationName: firstRelatedName(item.locationIds, locations, "Emplacement inconnu"),
         quantityLabel: formatQuantity(item.quantity, item.stockUnit),
-        projectName: firstRelatedName(item.projectIds, projects, null),
+        projectName: firstProjectNameForItem(item.id, projects),
         imagePath: getLocalImagePath(item.media),
         description: typeof item.description === "string" && item.description.trim()
           ? item.description

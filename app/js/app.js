@@ -19,6 +19,23 @@
         global.AtelierCatalog.search.filterItems,
         global.AtelierCatalog.search.getFilterValues
       );
+      try {
+        global.AtelierCatalog.projectUi.initialize(
+          global.AtelierCatalog.projects.createStore(
+            data.projects.projects,
+            global.localStorage,
+            mode,
+            data.inventory.items
+          ),
+          global.AtelierCatalog.projects.getCoverImage,
+          data.inventory.items,
+          global.AtelierCatalog.feasibility.analyzeProject,
+          global.AtelierCatalog.quantities.getAvailableQuantity,
+          global.AtelierCatalog.projectRequirements.create
+        );
+      } catch (projectError) {
+        global.AtelierCatalog.projectUi.renderUnavailable(projectError, summary.projectCount);
+      }
     } catch (error) {
       global.AtelierCatalog.ui.renderError(error);
     }
